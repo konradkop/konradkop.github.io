@@ -308,7 +308,7 @@ export default function ExperiencePage({ scrollToSection }) {
         </Carousel>
       </Row>
       <Row>
-        <Row>
+        <Row className="mt-3">
           <Col>
             <a href="https://www.linkedin.com/in/konradkopko/">
               <Icon
@@ -341,7 +341,7 @@ export default function ExperiencePage({ scrollToSection }) {
           <Icon
             iconName="ChevronDown"
             size={96}
-            className="down-arrow mt-4 d-inline-block align-center "
+            className="down-arrow mt-4 d-inline-block align-center d-none d-lg-block "
             onClick={() => scrollToSection("websites")}
           />
         </Row>

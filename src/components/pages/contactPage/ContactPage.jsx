@@ -54,7 +54,7 @@ export default function ContactPage({ scrollToSection }) {
         <Icon
           iconName="ChevronUp"
           size={96}
-          className="down-arrow d-inline-block align-center"
+          className="down-arrow d-inline-block align-center d-none d-lg-block "
           onClick={() => scrollToSection("intro")}
         />
       </Row>

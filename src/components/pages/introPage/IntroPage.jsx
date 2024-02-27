@@ -46,7 +46,7 @@ export default function IntroPage({ scrollToSection }) {
         <Icon
           iconName="ChevronDown"
           size={96}
-          className="down-arrow mt-4 d-inline-block align-center"
+          className="down-arrow mt-4 d-inline-block align-center d-none d-lg-block "
           onClick={() => scrollToSection("experience")}
         />
       </Row>

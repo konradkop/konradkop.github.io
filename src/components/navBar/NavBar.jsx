@@ -16,7 +16,7 @@ function NavBarComponent({ onClickParticles, scrollToSection }) {
         id="navbar"
       >
         <Container>
-          <Form className="me-3">
+          <Form className="me-3 justify-content-center align-items-center">
             <Form.Check
               type="switch"
               id="custom-switch"
@@ -25,7 +25,7 @@ function NavBarComponent({ onClickParticles, scrollToSection }) {
           </Form>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Navbar.Brand>Konrad</Navbar.Brand>
+            <Navbar.Brand style={{ margin: 0 }}>Konrad</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link onClick={() => scrollToSection("intro")}>
                 <Icon
