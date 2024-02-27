@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkonrad_website=self.webpackChunkkonrad_website||[]).push([[7204],{7204:(a,e,n)=>{n.d(e,{CircleDrawer:()=>r});var i=n(4409);class r{async draw(a){const{drawCircle:e}=await n.e(9368).then(n.bind(n,9368));e(a)}getSidesCount(){return 12}async particleInit(a,e){var n;const r=e.shapeData,s=null!==(n=null===r||void 0===r?void 0:r.angle)&&void 0!==n?n:{max:360,min:0};e.circleRange=(0,i.Gv)(s)?{min:(0,i.pu)(s.min),max:(0,i.pu)(s.max)}:{min:0,max:(0,i.pu)(s)},await Promise.resolve()}}}}]);
+//# sourceMappingURL=7204.fe9c26bf.chunk.js.map

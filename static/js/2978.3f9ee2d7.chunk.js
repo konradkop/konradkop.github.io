@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkonrad_website=self.webpackChunkkonrad_website||[]).push([[2978],{2978:(e,a,s)=>{s.d(a,{SquareDrawer:()=>r});class r{async draw(e){const{drawSquare:a}=await s.e(5275).then(s.bind(s,5275));a(e)}getSidesCount(){return 4}}}}]);
+//# sourceMappingURL=2978.3f9ee2d7.chunk.js.map
