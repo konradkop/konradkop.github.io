@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a56a7874.css",
-    "main.js": "/static/js/main.6e80a856.js",
+    "main.css": "/static/css/main.a9557b08.css",
+    "main.js": "/static/js/main.c679fafb.js",
     "static/js/4603.47e957b6.chunk.js": "/static/js/4603.47e957b6.chunk.js",
     "static/js/7590.4ac5988e.chunk.js": "/static/js/7590.4ac5988e.chunk.js",
     "static/js/6725.963e53d7.chunk.js": "/static/js/6725.963e53d7.chunk.js",
@@ -97,8 +97,8 @@
     "static/media/Konrad_resume.pdf": "/static/media/Konrad_resume.f98333b44787dbc1cb40.pdf",
     "static/media/hsbcLogo.png": "/static/media/hsbcLogo.db0ee4e98d41616a225b.png",
     "index.html": "/index.html",
-    "main.a56a7874.css.map": "/static/css/main.a56a7874.css.map",
-    "main.6e80a856.js.map": "/static/js/main.6e80a856.js.map",
+    "main.a9557b08.css.map": "/static/css/main.a9557b08.css.map",
+    "main.c679fafb.js.map": "/static/js/main.c679fafb.js.map",
     "4603.47e957b6.chunk.js.map": "/static/js/4603.47e957b6.chunk.js.map",
     "7590.4ac5988e.chunk.js.map": "/static/js/7590.4ac5988e.chunk.js.map",
     "6725.963e53d7.chunk.js.map": "/static/js/6725.963e53d7.chunk.js.map",
@@ -190,7 +190,7 @@
     "6221.43207e33.chunk.js.map": "/static/js/6221.43207e33.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a56a7874.css",
-    "static/js/main.6e80a856.js"
+    "static/css/main.a9557b08.css",
+    "static/js/main.c679fafb.js"
   ]
 }
