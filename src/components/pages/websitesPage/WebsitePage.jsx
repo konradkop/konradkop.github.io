@@ -38,7 +38,7 @@ export default function WebsitePage({ scrollToSection }) {
                 className="justify-content-md-center"
                 style={{ fontSize: "1.5em" }}
               >
-                Ripcut Jewelry
+                Artist ws
               </Row>
               <Row
                 className="justify-content-md-center"
