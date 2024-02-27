@@ -22,7 +22,7 @@ export default function ParticlesComponent({ particles }) {
         events: {
           onClick: {
             enable: true,
-            mode: "push",
+            mode: "grab",
           },
           onHover: {
             enable: true,
@@ -71,7 +71,7 @@ export default function ParticlesComponent({ particles }) {
             enable: true,
           },
           limit: 25,
-          value: 5,
+          value: 7,
         },
         opacity: {
           value: 0.5,
