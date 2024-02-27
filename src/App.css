@@ -90,6 +90,7 @@ a:hover {
 }
 
 .down-arrow {
+  z-index: 2;
   color: aliceblue;
   transform: translate(-50%, 0%);
   -webkit-animation: fade_move_down 4s ease-in-out infinite;
