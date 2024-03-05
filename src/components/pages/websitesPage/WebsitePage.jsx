@@ -39,18 +39,24 @@ export default function WebsitePage({ scrollToSection }) {
                 className="justify-content-md-center"
                 style={{
                   fontSize: "1.5em",
-
+                  fontWeight: "bold",
                   justifyContent: "center",
                 }}
               >
                 Food delivery app
               </Row>
               <Row
-                className="justify-content-md-center pb-3"
-                style={{ opacity: "50%" }}
+                className="justify-content-md-center"
+                style={{ opacity: "75%" }}
               >
-                React Native, NativewindCSS, Redux, Sanity.io, Google Maps API,
+                React Native, Nativewind, Redux, Sanity.io, Google Maps API,
                 deployed on Netlify
+              </Row>
+              <Row
+                className="justify-content-md-center pb-3"
+                style={{ opacity: "50%", justifyContent: "center" }}
+              >
+                Works best on mobile
               </Row>
               <Row className="justify-content-md-center">
                 <Col>
