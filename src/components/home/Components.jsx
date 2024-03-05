@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import NavBarComponent from "../navBar/NavBar";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import IntroPage from "../pages/introPage/IntroPage";
 import ExperiencePage from "../pages/experiencePage/ExperiencePage";
 import WebsitePage from "../pages/websitesPage/WebsitePage";

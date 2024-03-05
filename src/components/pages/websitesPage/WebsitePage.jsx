@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Icon } from "../../icons/Icon";
+import Button from "react-bootstrap/Button";
 
 export default function WebsitePage({ scrollToSection }) {
   return (
@@ -36,49 +37,28 @@ export default function WebsitePage({ scrollToSection }) {
             <Container>
               <Row
                 className="justify-content-md-center"
-                style={{ fontSize: "1.5em" }}
+                style={{
+                  fontSize: "1.5em",
+
+                  justifyContent: "center",
+                }}
               >
                 Food delivery app
               </Row>
               <Row
-                className="justify-content-md-center"
+                className="justify-content-md-center pb-3"
                 style={{ opacity: "50%" }}
               >
-                 React Native, NativewindCSS, Redux, Sanity.io, Google Maps API, deployed on Netlify
+                React Native, NativewindCSS, Redux, Sanity.io, Google Maps API,
+                deployed on Netlify
               </Row>
               <Row className="justify-content-md-center">
                 <Col>
-                  <a href={"https://konrad-delivery-app.netlify.app"}>Link</a>
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-          <Col xs>
-            <Container>
-              <Row
-                className="justify-content-md-center"
-                style={{ fontSize: "1.5em" }}
-              >
-                Twitter clone
-              </Row>
-              <Row
-                className="justify-content-md-center"
-                style={{ opacity: "50%" }}
-              >
-                ReactNative, Express.js
-              </Row>
-              <Row
-                className="justify-content-md-center"
-                style={{ color: "red", padding: "20px" }}
-              >
-                Under development- links don't work yet
-              </Row>
-              <Row className="justify-content-md-center">
-                <Col>
-                  <a href={""}>Source Code</a>
-                </Col>
-                <Col>
-                  <a href={""}>Live Site</a>
+                  <Button variant="outline-light">
+                    <a href={"https://konrad-delivery-app.netlify.app"}>
+                      Go to site
+                    </a>
+                  </Button>
                 </Col>
               </Row>
             </Container>
