@@ -38,26 +38,17 @@ export default function WebsitePage({ scrollToSection }) {
                 className="justify-content-md-center"
                 style={{ fontSize: "1.5em" }}
               >
-                Artist ws
+                Food delivery app
               </Row>
               <Row
                 className="justify-content-md-center"
                 style={{ opacity: "50%" }}
               >
-                React, Typescript, Next.js
-              </Row>
-              <Row
-                className="justify-content-md-center"
-                style={{ color: "red", padding: "20px" }}
-              >
-                Under development- links don't work yet
+                 React Native, NativewindCSS, Redux, Sanity.io, Google Maps API, deployed on Netlify
               </Row>
               <Row className="justify-content-md-center">
                 <Col>
-                  <a href={""}>Source Code</a>
-                </Col>
-                <Col>
-                  <a href={""}>Live Site</a>
+                  <a href={"https://konrad-delivery-app.netlify.app"}>Link</a>
                 </Col>
               </Row>
             </Container>

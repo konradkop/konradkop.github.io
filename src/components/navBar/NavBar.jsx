@@ -25,7 +25,6 @@ function NavBarComponent({ onClickParticles, scrollToSection }) {
           </Form>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Navbar.Brand style={{ margin: 0 }}>Konrad</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link onClick={() => scrollToSection("intro")}>
                 <Icon
