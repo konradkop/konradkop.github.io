@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0bc30e97.css",
-    "main.js": "/static/js/main.017d0b60.js",
+    "main.js": "/static/js/main.578278de.js",
     "static/js/4603.47e957b6.chunk.js": "/static/js/4603.47e957b6.chunk.js",
     "static/js/7590.4ac5988e.chunk.js": "/static/js/7590.4ac5988e.chunk.js",
     "static/js/6725.963e53d7.chunk.js": "/static/js/6725.963e53d7.chunk.js",
@@ -98,7 +98,7 @@
     "static/media/hsbcLogo.png": "/static/media/hsbcLogo.db0ee4e98d41616a225b.png",
     "index.html": "/index.html",
     "main.0bc30e97.css.map": "/static/css/main.0bc30e97.css.map",
-    "main.017d0b60.js.map": "/static/js/main.017d0b60.js.map",
+    "main.578278de.js.map": "/static/js/main.578278de.js.map",
     "4603.47e957b6.chunk.js.map": "/static/js/4603.47e957b6.chunk.js.map",
     "7590.4ac5988e.chunk.js.map": "/static/js/7590.4ac5988e.chunk.js.map",
     "6725.963e53d7.chunk.js.map": "/static/js/6725.963e53d7.chunk.js.map",
@@ -191,6 +191,6 @@
   },
   "entrypoints": [
     "static/css/main.0bc30e97.css",
-    "static/js/main.017d0b60.js"
+    "static/js/main.578278de.js"
   ]
 }
