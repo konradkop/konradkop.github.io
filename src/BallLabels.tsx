@@ -29,7 +29,7 @@ const labelsObj = {
     color: '#ff4444',
     imageSize: defaultImageSize,
     image: cornellPhoto,
-    ballSize: ballSize * 0.75,
+    ballSize: ballSize * 0.5,
   },
 
   swell: {
