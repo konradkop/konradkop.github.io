@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkkonrad_website=self.webpackChunkkonrad_website||[]).push([[9368],{9368:(e,c,n)=>{n.d(c,{drawCircle:()=>r});const a=2*Math.PI,i=0,t={x:0,y:0};function r(e){const{context:c,particle:n,radius:r}=e;n.circleRange||(n.circleRange={min:i,max:a});const s=n.circleRange;c.arc(t.x,t.y,r,s.min,s.max,!1)}}}]);
-//# sourceMappingURL=9368.24f80ecc.chunk.js.map
