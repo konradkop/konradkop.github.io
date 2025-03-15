@@ -34,7 +34,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
     sceneRef.current.innerHTML = '';
 
     const width = window.innerWidth * 0.99;
-    const height = window.innerHeight - 200;
+    const height = window.innerHeight - 185;
 
     const engine = Matter.Engine.create({
       gravity: { x: 0, y: 1, scale: 0.002 },
@@ -81,7 +81,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       render: { fillStyle: 'transparent' },
     });
 
-    const ground = Matter.Bodies.rectangle(width / 2, height - 10, width, 20, {
+    const ground = Matter.Bodies.rectangle(width / 2, height, width, 20, {
       isStatic: true,
       render: { fillStyle: 'transparent' },
     });

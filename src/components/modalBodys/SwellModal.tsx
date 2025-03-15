@@ -39,7 +39,6 @@ function SwellModal() {
               transition={{ duration: 1 }}
             >
               <Title order={4} mb={5}>
-                Swell | Open Source Developer |{' '}
                 <Anchor
                   href="https://github.com/open-source-labs/Swell"
                   target="_blank"
@@ -49,7 +48,8 @@ function SwellModal() {
                   }}
                 >
                   Swell
-                </Anchor>
+                </Anchor>{' '}
+                | Open Source Developer
               </Title>
             </motion.div>
             <motion.div

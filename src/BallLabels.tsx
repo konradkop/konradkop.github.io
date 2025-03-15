@@ -21,7 +21,7 @@ const labelsObj = {
     color: '#4444ff',
     imageSize: defaultImageSize,
     image: konradPhoto,
-    ballSize: ballSize * 0.75,
+    ballSize: ballSize,
   },
 
   cornell: {
@@ -29,7 +29,7 @@ const labelsObj = {
     color: '#ff4444',
     imageSize: defaultImageSize,
     image: cornellPhoto,
-    ballSize: ballSize * 0.5,
+    ballSize: ballSize * 1.25,
   },
 
   swell: {
@@ -44,21 +44,21 @@ const labelsObj = {
     color: '#44ff44',
     imageSize: defaultImageSize,
     image: hsbcPhoto,
-    ballSize: ballSize * 0.75,
+    ballSize: ballSize,
   },
   mantra: {
     name: 'Mantra',
     color: '#ff44ff',
     imageSize: defaultImageSize,
     image: mantraPhoto,
-    ballSize: ballSize,
+    ballSize: ballSize * 1.5,
   },
   americorps: {
     name: 'Americorps',
     color: '#ffff44',
     imageSize: defaultImageSize,
     image: americorpsPhoto,
-    ballSize: ballSize * 0.75,
+    ballSize: ballSize,
   },
   baruch: {
     name: 'Baruch',
@@ -72,7 +72,7 @@ const labelsObj = {
     color: '#4444ff',
     imageSize: defaultImageSize,
     image: deliveryAppPhoto,
-    ballSize: ballSize * 0.5,
+    ballSize: ballSize * 0.75,
   },
 };
 

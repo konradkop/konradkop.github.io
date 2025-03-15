@@ -1,4 +1,13 @@
-import { Text, Title, List, ThemeIcon, Grid, Image, Flex } from '@mantine/core';
+import {
+  Text,
+  Title,
+  List,
+  ThemeIcon,
+  Grid,
+  Image,
+  Flex,
+  Anchor,
+} from '@mantine/core';
 import BaruchPhoto from '../../assets/baruch-rectangle.jpg';
 import { motion } from 'motion/react';
 
@@ -33,7 +42,17 @@ function BaruchModal() {
               transition={{ duration: 1 }}
             >
               <Title order={4} mb={5}>
-                Baruch College | BBA: Statistics and Quantitative Modeling | NYC
+                <Anchor
+                  href="https://www.baruch.cuny.edu/"
+                  target="_blank"
+                  size="lg"
+                  style={{
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Baruch College
+                </Anchor>
+                | BBA: Statistics and Quantitative Modeling | NYC
               </Title>
             </motion.div>
             <motion.div

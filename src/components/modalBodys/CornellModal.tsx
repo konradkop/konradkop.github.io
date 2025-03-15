@@ -1,17 +1,25 @@
-import { Text, Title, List, ThemeIcon, Grid, Image, Flex } from '@mantine/core';
+import {
+  Text,
+  Title,
+  List,
+  ThemeIcon,
+  Grid,
+  Image,
+  Flex,
+  Anchor,
+} from '@mantine/core';
 import cornellPhoto from '../../assets/cornell-rectangle.png';
 import { motion } from 'motion/react';
 
 function CornellModal() {
   const items = [
-    'Dual Degree: Earns an M.S. from Cornell University and an M.S. from Technion – Israel Institute of Technology, focusing on advanced computing in healthcare.',
-    'Cybersecurity in Health Tech: Covers data privacy, encryption, and secure system design for EHRs, medical IoT devices, and telemedicine platforms.',
-    'Health Infrastructure & Cloud Computing: Focuses on scalable, secure cloud solutions for large healthcare datasets, leveraging GCP, AWS, and distributed systems.',
+    'Earning an M.S. from Cornell University and an M.S. from Technion – Israel Institute of Technology, focusing on advanced computing in healthcare.',
+    'Studies focusing on Health Infrastructure & Cloud Computing, building scalable, secure cloud solutions for large healthcare datasets, leveraging GCP, AWS, and distributed systems.',
     'AI & Machine Learning for Security: Explores AI-driven threat detection in health systems, fraud prevention in insurance claims, and anomaly detection in patient data.',
     'Blockchain & Data Integrity: Examines how blockchain technology secures patient records, prevents tampering, and enhances trust in health transactions.',
     'Regulatory & Compliance Expertise: Covers HIPAA, GDPR, and HITRUST frameworks to ensure compliance with global health data protection laws.',
     'Startup Studio & Industry Partnerships: Provides hands-on experience working on real-world cybersecurity challenges in health tech through collaborations with hospitals, research labs, and tech companies.',
-    'NYC-Based Innovation Hub: Located at Cornell Tech’s Roosevelt Island campus, offering access to top cybersecurity firms, health startups, and venture capital networks.',
+    'Cybersecurity in Health Tech: Covers data privacy, encryption, and secure system design for EHRs, medical IoT devices, and telemedicine platforms.',
   ];
 
   return (
@@ -33,7 +41,17 @@ function CornellModal() {
               transition={{ duration: 1 }}
             >
               <Title order={4} mb={5}>
-                Cornell | MS: Information Systems | NYC
+                <Anchor
+                  href="https://tech.cornell.edu/"
+                  target="_blank"
+                  size="lg"
+                  style={{
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Cornell
+                </Anchor>{' '}
+                | MS: Information Systems | NYC
               </Title>
             </motion.div>
             <motion.div

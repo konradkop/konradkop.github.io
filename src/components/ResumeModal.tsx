@@ -18,19 +18,26 @@ interface ResumeModalProps {
 
 function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
-
+  const width = window.innerWidth;
+  const height = window.innerHeight - 200;
   return (
     <>
       <Modal
         opened={opened}
         onClose={close}
-        padding={30}
+        padding={50}
         withCloseButton={isMobile ? true : false}
         fullScreen={isMobile}
-        transitionProps={{ transition: 'rotate-left', duration: 400 }}
-        overlayProps={{ backgroundOpacity: 0.55, blur: 3 }}
-        size={'55rem'}
-        styles={{ title: { fontWeight: 600 } }}
+        transitionProps={{ transition: 'slide-down', duration: 400 }}
+        overlayProps={{ backgroundOpacity: 0, blur: 0 }}
+        size={width}
+        styles={{
+          title: { fontWeight: 600 },
+          body: {
+            height: height,
+            overflowY: 'auto',
+          },
+        }}
       >
         {currLabel === 'Mantra' && <MantraModal />}
         {currLabel === 'HSBC' && <HSBCModal />}
