@@ -4,12 +4,12 @@ import {
   List,
   ThemeIcon,
   Grid,
-  Image,
   Flex,
   Anchor,
 } from '@mantine/core';
 import BaruchPhoto from '../../assets/baruch-rectangle.jpg';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function BaruchModal() {
   const items = [
@@ -25,7 +25,7 @@ function BaruchModal() {
 
   return (
     <>
-      <Image radius="md" h={200} src={BaruchPhoto} />
+      <ModalImage img={BaruchPhoto} />
       <div
         style={{
           padding: '20px',
@@ -65,7 +65,7 @@ function BaruchModal() {
               </Text>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}

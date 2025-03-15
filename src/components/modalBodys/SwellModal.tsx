@@ -4,12 +4,12 @@ import {
   List,
   ThemeIcon,
   Grid,
-  Image,
   Flex,
   Anchor,
 } from '@mantine/core';
 import SwellPhoto from '../../assets/swell-rectangle.gif';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function SwellModal() {
   const items = [
@@ -22,7 +22,7 @@ function SwellModal() {
 
   return (
     <>
-      <Image radius="md" h={200} src={SwellPhoto} />
+      <ModalImage img={SwellPhoto} />
       <div
         style={{
           padding: '20px',
@@ -62,7 +62,7 @@ function SwellModal() {
               </Text>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}

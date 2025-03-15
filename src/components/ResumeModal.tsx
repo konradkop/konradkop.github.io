@@ -29,7 +29,7 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
         withCloseButton={isMobile ? true : false}
         fullScreen={isMobile}
         transitionProps={{ transition: 'slide-down', duration: 400 }}
-        overlayProps={{ backgroundOpacity: 0, blur: 0 }}
+        overlayProps={{ backgroundOpacity: 0.3, blur: 0 }}
         size={width}
         styles={{
           title: { fontWeight: 600 },

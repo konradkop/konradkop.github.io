@@ -1,6 +1,7 @@
-import { Text, Title, List, ThemeIcon, Grid, Image, Flex } from '@mantine/core';
+import { Text, Title, List, ThemeIcon, Grid, Flex } from '@mantine/core';
 import hsbcPhoto from '../../assets/hsbc-rectangle.png';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function HSBCModal() {
   const items = [
@@ -12,7 +13,7 @@ function HSBCModal() {
 
   return (
     <>
-      <Image radius="md" h={200} src={hsbcPhoto} />
+      <ModalImage img={hsbcPhoto} />
       <div
         style={{
           padding: '20px',
@@ -42,7 +43,7 @@ function HSBCModal() {
               </Text>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}

@@ -1,6 +1,7 @@
-import { Text, Title, List, ThemeIcon, Grid, Image, Flex } from '@mantine/core';
+import { Text, Title, List, ThemeIcon, Grid, Flex } from '@mantine/core';
 import americorpsPhoto from '../../assets/americorps-rectangle.png';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function AmericorpsModal() {
   const items = [
@@ -13,7 +14,7 @@ function AmericorpsModal() {
 
   return (
     <>
-      <Image radius="md" h={200} src={americorpsPhoto} />
+      <ModalImage img={americorpsPhoto} />
       <div
         style={{
           padding: '20px',
@@ -43,7 +44,7 @@ function AmericorpsModal() {
               </Text>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}

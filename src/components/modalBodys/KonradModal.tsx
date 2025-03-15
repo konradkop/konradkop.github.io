@@ -1,13 +1,14 @@
-import { Title, List, ThemeIcon, Grid, Image, Flex } from '@mantine/core';
+import { Title, List, ThemeIcon, Grid, Flex } from '@mantine/core';
 import konradSki from '../../assets/konrad-ski.jpg';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function KonradModal() {
   const items = ['Thanks for clicking on my website!'];
 
   return (
     <>
-      <Image radius="md" h={500} src={konradSki} />
+      <ModalImage img={konradSki} />
       <div
         style={{
           padding: '20px',
@@ -28,7 +29,7 @@ function KonradModal() {
               </Title>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}

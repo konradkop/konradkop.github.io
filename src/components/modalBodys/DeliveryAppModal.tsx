@@ -4,12 +4,12 @@ import {
   List,
   ThemeIcon,
   Grid,
-  Image,
   Flex,
   Anchor,
 } from '@mantine/core';
 import netlifyPhoto from '../../assets/netlify-rectangle.png';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function DeliveryAppModal() {
   const items = [
@@ -20,7 +20,7 @@ function DeliveryAppModal() {
 
   return (
     <>
-      <Image radius="md" h={200} src={netlifyPhoto} />
+      <ModalImage img={netlifyPhoto} />
       <div
         style={{
           padding: '20px',
@@ -60,7 +60,7 @@ function DeliveryAppModal() {
               </Text>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}

@@ -4,12 +4,12 @@ import {
   List,
   ThemeIcon,
   Grid,
-  Image,
   Flex,
   Anchor,
 } from '@mantine/core';
 import cornellPhoto from '../../assets/cornell-rectangle.png';
 import { motion } from 'motion/react';
+import ModalImage from './ModalImage';
 
 function CornellModal() {
   const items = [
@@ -24,7 +24,7 @@ function CornellModal() {
 
   return (
     <>
-      <Image radius="md" h={200} src={cornellPhoto} />
+      <ModalImage img={cornellPhoto} />
       <div
         style={{
           padding: '20px',
@@ -64,7 +64,7 @@ function CornellModal() {
               </Text>
             </motion.div>
           </Flex>
-          <List spacing="sm" size="sm" mt={10}>
+          <List spacing="sm" size="md" mt={10}>
             {items.map((item, index) => (
               <motion.div
                 key={index}
