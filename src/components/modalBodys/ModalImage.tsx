@@ -8,7 +8,7 @@ export default function ModalImage({ img }: ImageModalProps) {
   return (
     <Image
       radius="md"
-      h={300}
+      h={200}
       fit="contain"
       src={img}
       style={{ padding: 'auto' }}
