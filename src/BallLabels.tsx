@@ -10,10 +10,19 @@ import deliveryAppPhoto from './assets/delivery-app-circle-modified.png';
 const defaultImageSize = 870;
 const width = window.innerWidth * 0.99;
 const height = window.innerHeight * 0.8;
-const ballSize = Math.min(width, height) * 0.2;
+let ballSize = Math.min(width, height) * 0.2;
 
+let isMobile = false;
+
+if (width < height) {
+  isMobile = true;
+}
 //  if you decrease defaultImageSize it will be larger
 //  if you multiply ballSize by 1.etc it will be larger
+
+if (isMobile) {
+  ballSize = ballSize * 0.8;
+}
 
 const labelsObj = {
   konrad: {
