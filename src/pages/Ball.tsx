@@ -238,7 +238,11 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
     // Matter.World.clear(world, false);
     let walls = createWalls();
-    Matter.World.add(world, [...walls, ...balls.map((ball) => ball.body)]);
+    Matter.World.add(world, [
+      ...walls,
+      ...balls.map((ball) => ball.body),
+      mouseConstraint,
+    ]);
 
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, engine);
