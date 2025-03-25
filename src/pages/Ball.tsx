@@ -27,14 +27,19 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
   const sceneRef = useRef<HTMLDivElement>(null);
   const [hoveredBall, setHoveredBall] = useState<string | null>(null);
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
 
   useEffect(() => {
     if (!sceneRef.current) return;
     sceneRef.current.innerHTML = '';
 
-    const width = window.innerWidth * 0.99;
-    const height = window.innerHeight - 185;
+    const getDimensions = () => ({
+      width: window.innerWidth * 0.99,
+      height: window.innerHeight - 185,
+    });
+
+    let { width, height } = getDimensions();
+    const initialWidth = width;
 
     const engine = Matter.Engine.create({
       gravity: { x: 0, y: 1, scale: 0.002 },
@@ -73,34 +78,32 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
         ),
         label: labelObj.name,
         scaledUp: false,
+        originalSize: labelObj.ballSize,
       };
     });
 
-    const top = Matter.Bodies.rectangle(width / 2, 10, width, 20, {
-      isStatic: true,
-      render: { fillStyle: 'transparent' },
-    });
-
-    const ground = Matter.Bodies.rectangle(width / 2, height, width, 20, {
-      isStatic: true,
-      render: { fillStyle: 'transparent' },
-    });
-
-    const leftWall = Matter.Bodies.rectangle(0, height / 2, 10, height, {
-      isStatic: true,
-      render: { fillStyle: 'transparent' },
-    });
-
-    const rightWall = Matter.Bodies.rectangle(width, height / 2, 10, height, {
-      isStatic: true,
-      render: { fillStyle: 'transparent' },
-    });
-
-    const hoop = Matter.Bodies.rectangle(width / 2, height * 0.4, 250, 20, {
-      isStatic: true,
-      isSensor: true,
-      render: { fillStyle: 'red' },
-    });
+    const createWalls = () => [
+      // top
+      Matter.Bodies.rectangle(width / 2, 10, width, 20, {
+        isStatic: true,
+        render: { fillStyle: 'transparent' },
+      }),
+      // ground
+      Matter.Bodies.rectangle(width / 2, height, width, 20, {
+        isStatic: true,
+        render: { fillStyle: 'transparent' },
+      }),
+      // left wall
+      Matter.Bodies.rectangle(0, height / 2, 10, height, {
+        isStatic: true,
+        render: { fillStyle: 'transparent' },
+      }),
+      // right wall
+      Matter.Bodies.rectangle(width, height / 2, 10, height, {
+        isStatic: true,
+        render: { fillStyle: 'transparent' },
+      }),
+    ];
 
     // const leftSquare = Matter.Bodies.trapezoid(
     //   width / 2 - 150,
@@ -128,14 +131,14 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
     //   },
     // );
 
-    Matter.Events.on(engine, 'collisionStart', (event) => {
-      event.pairs.forEach(({ bodyA, bodyB }) => {
-        const ball = balls.find((b) => b.body === bodyA || b.body === bodyB);
-        if (ball && (bodyA === hoop || bodyB === hoop)) {
-          setScore((prev) => prev + 1);
-        }
-      });
-    });
+    // Matter.Events.on(engine, 'collisionStart', (event) => {
+    //   event.pairs.forEach(({ bodyA, bodyB }) => {
+    //     const ball = balls.find((b) => b.body === bodyA || b.body === bodyB);
+    //     if (ball && (bodyA === hoop || bodyB === hoop)) {
+    //       setScore((prev) => prev + 1);
+    //     }
+    //   });
+    // });
 
     // Add mouse control for dragging
     const mouse = Matter.Mouse.create(render.canvas);
@@ -233,26 +236,48 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       }
     });
 
-    Matter.World.clear(world, false);
-    Matter.World.add(
-      world,
-      balls.map((ball) => ball.body),
-    );
-    Matter.World.add(world, [
-      top,
-      ground,
-      leftWall,
-      rightWall,
-      mouseConstraint,
-      // keep the hoop not working for now
-      // hoop,
-      // leftSquare,
-      // rightSquare,
-    ]);
+    // Matter.World.clear(world, false);
+    let walls = createWalls();
+    Matter.World.add(world, [...walls, ...balls.map((ball) => ball.body)]);
 
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, engine);
     Matter.Render.run(render);
+
+    // Handle window resize
+    const handleResize = () => {
+      const { width: newWidth, height: newHeight } = getDimensions();
+
+      // Update render size
+      render.bounds.max.x = newWidth;
+      render.bounds.max.y = newHeight;
+      render.options.width = newWidth;
+      render.options.height = newHeight;
+      Matter.Render.setPixelRatio(render, window.devicePixelRatio);
+
+      const scaleFactor = newWidth / initialWidth;
+      balls.forEach((ball) => {
+        const newSize = ball.originalSize * scaleFactor;
+        const currentSize = ball.body.circleRadius || ball.originalSize;
+        const scaleRatio = newSize / currentSize;
+
+        Matter.Body.scale(ball.body, scaleRatio, scaleRatio);
+
+        if (ball.body.render.sprite) {
+          ball.body.render.sprite.xScale *= scaleRatio;
+          ball.body.render.sprite.yScale *= scaleRatio;
+        }
+      });
+
+      // Reposition walls
+      Matter.World.remove(world, walls);
+      width = newWidth;
+      height = newHeight;
+      walls = createWalls();
+      Matter.World.add(world, walls);
+    };
+
+    window.addEventListener('resize', handleResize);
 
     return () => {
       Matter.Render.stop(render);
@@ -268,20 +293,6 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
   return (
     <>
       <div ref={sceneRef} />
-      {score > 0 && (
-        <div
-          style={{
-            position: 'absolute',
-            top: 20,
-            left: 20,
-            fontSize: '24px',
-            fontWeight: 'bold',
-            color: 'black',
-          }}
-        >
-          Score: {score}
-        </div>
-      )}
     </>
   );
 };
