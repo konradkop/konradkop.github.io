@@ -45,7 +45,7 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
         {currLabel === 'Cornell' && <CornellModal />}
         {currLabel === 'Baruch' && <BaruchModal />}
         {currLabel === 'Swell' && <SwellModal />}
-        {currLabel === 'Konrad' && <KonradModal />}
+        {currLabel === 'Konrad' && <KonradModal close={close} />}
         {currLabel === 'DeliveryApp' && <DeliveryAppModal />}
       </Modal>
     </>

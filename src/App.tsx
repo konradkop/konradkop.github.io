@@ -9,7 +9,7 @@ import labelsObj from './BallLabels';
 import Footer from './components/Footer';
 
 function App() {
-  const [opened, { open, close }] = useDisclosure(false);
+  const [opened, { open, close }] = useDisclosure(true);
 
   const [currLabel, setCurrLabel] = useState<string>(labelsObj.konrad.name);
 

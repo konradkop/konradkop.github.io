@@ -4,6 +4,7 @@ import ImageComponent from './ImageComponent';
 import konradPhoto from '../assets/konradPhoto.jpg'; // Import the image
 import feather from 'feather-icons';
 import konradResume from '../assets/Konrad-resume.pdf';
+import { colors } from '../styles';
 function Footer() {
   useEffect(() => {
     feather.replace();
@@ -18,7 +19,7 @@ function Footer() {
         left: 0,
         width: '100%',
         height: 200,
-        backgroundColor: '#87CEEB',
+        backgroundColor: colors.footer,
       }}
     >
       <Flex justify="space-around" align="center" gap="xl">
