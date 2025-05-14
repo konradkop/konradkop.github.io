@@ -1,11 +1,6 @@
 import { Container, Title, Text, Button, Anchor, Box } from '@mantine/core';
-import {
-  heroWrapper,
-  introText,
-  mainTitle,
-  subtitle,
-  description,
-} from '../../../styles';
+import { useMediaQuery, useViewportSize } from '@mantine/hooks';
+import { introText, mainTitle, subtitle, description } from '../../../styles';
 import { motion } from 'motion/react';
 
 interface HeroSectionProps {
@@ -13,11 +8,14 @@ interface HeroSectionProps {
 }
 
 function HeroSection({ close }: HeroSectionProps) {
+  const isMobile = useMediaQuery('(max-width: 50em)');
+  const { height } = useViewportSize();
+
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.3, // adjust this to control timing
+        staggerChildren: 0.3, // adjust to control timing
       },
     },
   };
@@ -27,9 +25,17 @@ function HeroSection({ close }: HeroSectionProps) {
     show: { opacity: 1, y: 0, transition: { duration: 1 } },
   };
 
+  const heroWrapper = {
+    minHeight: height - 300,
+    display: 'flex',
+    alignItems: isMobile ? 'left' : 'center',
+    justifyContent: isMobile ? 'left' : 'center',
+    padding: isMobile ? '0' : '0rem 4rem',
+  };
+
   return (
     <Box style={heroWrapper}>
-      <Container size="md">
+      <Container>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -79,7 +85,7 @@ function HeroSection({ close }: HeroSectionProps) {
               I&apos;m focusing my studies on Healthcare and Bioinformatics.
               Currently, I am actively looking for an internship role as a{' '}
               <Text span fw={700}>
-                ML engineer/Software Developer
+                ML Engineer/Software Engineer
               </Text>
             </Text>
           </motion.div>
@@ -92,8 +98,9 @@ function HeroSection({ close }: HeroSectionProps) {
               size="md"
               onClick={close}
             >
-              Take a look!
+              <Text span>Take a look!</Text>
             </Button>
+            <br />
             <motion.div variants={childVariants}>
               <Text style={introText}>P.S. You can drag them {':)'} </Text>
             </motion.div>

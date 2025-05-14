@@ -12,6 +12,7 @@ function ImageComponent({ photo }: ImageComponentProps) {
         alt="Konrad's photo"
         radius="md" // Optional: Adds rounded corners
         fit="contain" // Optional: Controls how the image fits within the container
+        style={{ width: '50px', height: '48px' }}
       />
     </Box>
   );

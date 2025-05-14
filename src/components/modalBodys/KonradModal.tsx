@@ -2,8 +2,6 @@ import { Flex } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import konradSki from '../../assets/konrad-ski.jpg';
 import ModalImage from './ModalImage';
-import feather from 'feather-icons';
-import { useEffect } from 'react';
 import HeroSection from './KonradModalSubsections/HeroSection';
 import { colors } from '../../styles';
 
@@ -13,10 +11,6 @@ interface KonradModalProps {
 
 function KonradModal({ close }: KonradModalProps) {
   const isMobile = useMediaQuery('(max-width: 90em)');
-
-  useEffect(() => {
-    feather.replace();
-  }, []);
 
   return (
     <div

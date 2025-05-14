@@ -1,5 +1,3 @@
-// src/styles/heroStyles.ts
-
 export const colors = {
   background: '#e8f2ff',
   primaryText: '#2b2b2b',
@@ -7,19 +5,6 @@ export const colors = {
   descriptionText: '#555',
   accent: 'blue',
   footer: '#87CEEB',
-};
-
-export const heroWrapper = {
-  minHeight: window.innerHeight - 300,
-
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '0rem 4rem',
-
-  [`@media (max-width: 768px)`]: {
-    padding: '0', // Remove horizontal padding on small screens
-  },
 };
 
 export const introText = {
