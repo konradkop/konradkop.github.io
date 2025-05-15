@@ -14,8 +14,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@mantine/core": "^7.16.2",
-    "@mantine/hooks": "^7.16.2",
+    "@mantine/carousel": "^8.0.1",
+    "@mantine/core": "^8.0.1",
+    "@mantine/hooks": "^8.0.1",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "feather-icons": "^4.29.2",
     "matter-js": "^0.20.0",
     "motion": "^12.4.0",

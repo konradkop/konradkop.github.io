@@ -8,7 +8,6 @@ import BaruchModal from './modalBodys/BaruchModal';
 import SwellModal from './modalBodys/SwellModal';
 import KonradModal from './modalBodys/KonradModal';
 import DeliveryAppModal from './modalBodys/DeliveryAppModal';
-import { useViewportSize } from '@mantine/hooks';
 
 interface ResumeModalProps {
   opened: boolean;
@@ -19,7 +18,6 @@ interface ResumeModalProps {
 
 function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
-  const { height } = useViewportSize();
   const width = window.innerWidth;
 
   return (
@@ -36,7 +34,6 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
         styles={{
           title: { fontWeight: 600 },
           body: {
-            height: isMobile ? height - 75 : height - 200,
             overflowY: 'auto',
           },
         }}

@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 export const colors = {
   background: '#e8f2ff',
   primaryText: '#2b2b2b',
@@ -5,6 +7,8 @@ export const colors = {
   descriptionText: '#555',
   accent: 'blue',
   footer: '#87CEEB',
+  lightRed: '#f8d7da',
+  accentRed: '#842029',
 };
 
 export const introText = {
@@ -13,6 +17,35 @@ export const introText = {
   fontWeight: 500,
   fontFamily: 'monospace',
   marginBottom: '1rem',
+};
+
+export const introTextRed = {
+  color: colors.accentRed,
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  fontFamily: 'monospace',
+  marginBottom: '1rem',
+};
+
+export const timelineHorizontalLineRed: CSSProperties = {
+  position: 'absolute',
+  left: '0px',
+  top: '1rem',
+  width: '1.25rem',
+  height: '2px',
+  marginLeft: '0.7rem',
+  backgroundColor: colors.accentRed,
+};
+
+export const timelineDotRed = {
+  width: '12px',
+  height: '12px',
+  borderRadius: '50%',
+  backgroundColor: colors.accentRed,
+  marginLeft: '1.7rem',
+  marginRight: '1rem',
+  marginTop: '.7rem',
+  flexShrink: 0,
 };
 
 export const mainTitle = {
@@ -41,7 +74,6 @@ export const description = {
   color: colors.descriptionText,
   fontSize: '1rem',
   lineHeight: 1.6,
-  marginBottom: '2rem',
   maxWidth: 650,
 
   [`@media (max-width: 768px)`]: {

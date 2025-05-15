@@ -10,7 +10,7 @@ interface KonradModalProps {
 }
 
 function KonradModal({ close }: KonradModalProps) {
-  const isMobile = useMediaQuery('(max-width: 90em)');
+  const isMobile = useMediaQuery('(max-width: 50em)');
 
   return (
     <div
@@ -21,16 +21,26 @@ function KonradModal({ close }: KonradModalProps) {
         backgroundColor: colors.background,
       }}
     >
-      <Flex direction={'row'} align="center" style={{ width: '100%' }}>
-        <Flex>
-          <HeroSection close={close} />
-        </Flex>
-        {!isMobile && (
+      {isMobile && (
+        <Flex direction={'column'} align="center" style={{ width: '100%' }}>
           <Flex>
             <ModalImage img={konradSki} />
           </Flex>
-        )}
-      </Flex>
+          <Flex>
+            <HeroSection close={close} />
+          </Flex>
+        </Flex>
+      )}
+      {!isMobile && (
+        <Flex direction={'row'} align="center" style={{ width: '100%' }}>
+          <Flex>
+            <HeroSection close={close} />
+          </Flex>
+          <Flex>
+            <ModalImage img={konradSki} />
+          </Flex>
+        </Flex>
+      )}
     </div>
   );
 }

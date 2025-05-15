@@ -57,7 +57,7 @@ function HeroSection({ close }: HeroSectionProps) {
 
           <motion.div variants={childVariants}>
             <Text style={description}>
-              I am currently a Master&apos;s Student at{' '}
+              I am currently at{' '}
               <Anchor href="https://tech.cornell.edu/" c="blue">
                 Cornell Tech
               </Anchor>{' '}
@@ -89,7 +89,8 @@ function HeroSection({ close }: HeroSectionProps) {
               </Text>
             </Text>
           </motion.div>
-
+          <br />
+          <br />
           <motion.div variants={childVariants}>
             <Button
               variant="outline"
