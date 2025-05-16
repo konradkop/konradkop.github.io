@@ -3,6 +3,8 @@ import HeroSection from './HSBCModalSubsections/HeroSection';
 import { useMediaQuery } from '@mantine/hooks';
 import { colors } from '../../styles';
 import HSBCImageCarousel from './HSBCModalSubsections/HSBCarousel';
+import ModalImage from './ModalImage';
+import hsbcPhoto from '../../assets/hsbc-rectangle.png';
 
 function HSBCModal() {
   const isMobile = useMediaQuery('(max-width: 50em)');
@@ -17,6 +19,7 @@ function HSBCModal() {
     >
       {isMobile && (
         <Flex direction={'column'} align="center" style={{ width: '100%' }}>
+          <ModalImage img={hsbcPhoto} />
           <Flex>
             <HeroSection />
           </Flex>

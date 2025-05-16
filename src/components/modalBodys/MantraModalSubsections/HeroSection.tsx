@@ -3,11 +3,11 @@ import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { motion } from 'motion/react';
 import { Flex } from '@mantine/core';
 import {
-  introTextRed,
+  introText,
   description,
   colors,
-  timelineDotRed,
-  timelineHorizontalLineRed,
+  timelineDotBlue,
+  timelineHorizontalLineBlue,
 } from '../../../styles';
 
 function HeroSection() {
@@ -37,10 +37,12 @@ function HeroSection() {
   };
 
   const items = [
-    'Developed a Node.js/Puppeteer based script to parse through company financial data, bypassing the need for user-based inputs, negating user error. Previously, a dedicated analyst had to spend hours going through documents.',
-    'Harnessed SQL-based data analysis software to iterate over company data, enriching and joining it with other company systems to output a user-readable format.',
-    'Used SQL to query company data hosted on GCP’s BigQuery and provide updated and enriched financial information.',
-    'Tracked over 2,000 active company clients and provided monthly updates on each one for the rest of the bank, using VBA, Excel, and other internal databases.',
+    'Fullstack engineer at a health-tech startup connecting college students with mental health providers. Developed a Node.js, TypeScript, and React-based application using GraphQL, AWS, and Postgres.',
+    'Contributed to React Native mobile app conversion, ensuring deep link integrity and UX stability.',
+    'Mitigated potential security/compliance issues related to HIPAA-sensitive customer data.',
+    'Maintained high-quality code using ESLint, Airbnb JavaScript Style, and Jest for testing.',
+    '70% of patients reported Mantra helped them stay in school; 68% saw improved academic performance.',
+    'Mantra now works with 110 campuses and supports 800,000+ students.',
   ];
 
   return (
@@ -52,7 +54,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Title order={4} mb={5} style={description}>
-            HSBC | Financial/Data Analyst | NYC
+            Mantra Health | Software Engineer | NYC
           </Title>
         </motion.div>
         <motion.div
@@ -60,8 +62,8 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Text size="sm" style={introTextRed}>
-            Aug 2019 - Aug 2021
+          <Text size="sm" style={introText}>
+            Nov 2021 - Jan 2024
           </Text>
         </motion.div>
         <motion.div
@@ -78,7 +80,7 @@ function HeroSection() {
                 bottom: 0,
                 left: '0.65rem',
                 width: '2px',
-                backgroundColor: colors.accentRed,
+                backgroundColor: colors.accent,
                 zIndex: 0,
               }}
             />
@@ -88,8 +90,8 @@ function HeroSection() {
                   align="flex-start"
                   style={{ position: 'relative', zIndex: 1 }}
                 >
-                  <Box style={timelineHorizontalLineRed} />
-                  <Box style={timelineDotRed} />
+                  <Box style={timelineHorizontalLineBlue} />
+                  <Box style={timelineDotBlue} />
                   <Paper
                     withBorder
                     shadow="lg"

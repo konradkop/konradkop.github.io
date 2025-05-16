@@ -3,11 +3,11 @@ import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { motion } from 'motion/react';
 import { Flex } from '@mantine/core';
 import {
-  introTextRed,
+  introText,
   description,
   colors,
-  timelineDotRed,
-  timelineHorizontalLineRed,
+  timelineDotBlue,
+  timelineHorizontalLineBlue,
 } from '../../../styles';
 
 function HeroSection() {
@@ -37,10 +37,11 @@ function HeroSection() {
   };
 
   const items = [
-    'Developed a Node.js/Puppeteer based script to parse through company financial data, bypassing the need for user-based inputs, negating user error. Previously, a dedicated analyst had to spend hours going through documents.',
-    'Harnessed SQL-based data analysis software to iterate over company data, enriching and joining it with other company systems to output a user-readable format.',
-    'Used SQL to query company data hosted on GCP’s BigQuery and provide updated and enriched financial information.',
-    'Tracked over 2,000 active company clients and provided monthly updates on each one for the rest of the bank, using VBA, Excel, and other internal databases.',
+    'Managed food distribution and coordinated outreach efforts for traditionally underserved communities.',
+    'Conducted Excel-based data analysis, including generating heat maps, examining patient data, and collaborating directly with healthcare providers.',
+    'Worked within the American healthcare system, specifically with Medication-Assisted Treatment (MAT) programs for opioid addiction patients.',
+    'Developed educational materials and conducted community workshops to increase awareness of healthcare resources and services.',
+    'Assisted in the implementation of digital tools to streamline patient outreach and data tracking, improving efficiency in community health programs.',
   ];
 
   return (
@@ -52,7 +53,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Title order={4} mb={5} style={description}>
-            HSBC | Financial/Data Analyst | NYC
+            Americorps | Volunteer | NYC
           </Title>
         </motion.div>
         <motion.div
@@ -60,8 +61,8 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Text size="sm" style={introTextRed}>
-            Aug 2019 - Aug 2021
+          <Text size="sm" style={introText}>
+            May 2024 - Dec 2024
           </Text>
         </motion.div>
         <motion.div
@@ -78,7 +79,7 @@ function HeroSection() {
                 bottom: 0,
                 left: '0.65rem',
                 width: '2px',
-                backgroundColor: colors.accentRed,
+                backgroundColor: colors.accent,
                 zIndex: 0,
               }}
             />
@@ -88,8 +89,8 @@ function HeroSection() {
                   align="flex-start"
                   style={{ position: 'relative', zIndex: 1 }}
                 >
-                  <Box style={timelineHorizontalLineRed} />
-                  <Box style={timelineDotRed} />
+                  <Box style={timelineHorizontalLineBlue} />
+                  <Box style={timelineDotBlue} />
                   <Paper
                     withBorder
                     shadow="lg"

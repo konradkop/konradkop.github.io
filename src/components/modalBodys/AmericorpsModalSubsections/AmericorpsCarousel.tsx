@@ -1,12 +1,13 @@
 import { Carousel } from '@mantine/carousel';
 import { Image } from '@mantine/core';
-import hsbcPhoto from '../../../assets/hsbc-rectangle.png';
-import hsbcBuilding from '../../../assets/hsbcBuilding.jpg';
-import hsbc2 from '../../../assets/hsbc2.png';
+import americorpsPhoto from '../../../assets/americorps-rectangle.png';
+import americorps1 from '../../../assets/americorps1.jpg';
+import americorps2 from '../../../assets/americorps2.jpg';
+import americorps3 from '../../../assets/americorps3.jpg';
 import '@mantine/carousel/styles.css';
 
-function HSBCImageCarousel() {
-  const images = [hsbcPhoto, hsbc2, hsbcBuilding];
+function AmericorpsImageCarousel() {
+  const images = [americorps2, americorps1, americorps3, americorpsPhoto];
 
   return (
     <Carousel
@@ -30,4 +31,4 @@ function HSBCImageCarousel() {
   );
 }
 
-export default HSBCImageCarousel;
+export default AmericorpsImageCarousel;

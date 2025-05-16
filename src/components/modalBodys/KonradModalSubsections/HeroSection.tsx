@@ -99,7 +99,7 @@ function HeroSection({ close }: HeroSectionProps) {
               size="md"
               onClick={close}
             >
-              <Text span>Take a look!</Text>
+              <Text span>Take a look at my experience!</Text>
             </Button>
             <br />
             <motion.div variants={childVariants}>

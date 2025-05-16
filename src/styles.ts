@@ -37,11 +37,32 @@ export const timelineHorizontalLineRed: CSSProperties = {
   backgroundColor: colors.accentRed,
 };
 
+export const timelineHorizontalLineBlue: CSSProperties = {
+  position: 'absolute',
+  left: '0px',
+  top: '1rem',
+  width: '1.25rem',
+  height: '2px',
+  marginLeft: '0.7rem',
+  backgroundColor: colors.accent,
+};
+
 export const timelineDotRed = {
   width: '12px',
   height: '12px',
   borderRadius: '50%',
   backgroundColor: colors.accentRed,
+  marginLeft: '1.7rem',
+  marginRight: '1rem',
+  marginTop: '.7rem',
+  flexShrink: 0,
+};
+
+export const timelineDotBlue = {
+  width: '12px',
+  height: '12px',
+  borderRadius: '50%',
+  backgroundColor: colors.accent,
   marginLeft: '1.7rem',
   marginRight: '1rem',
   marginTop: '.7rem',
@@ -75,9 +96,4 @@ export const description = {
   fontSize: '1rem',
   lineHeight: 1.6,
   maxWidth: 650,
-
-  [`@media (max-width: 768px)`]: {
-    fontSize: '0.875rem',
-    padding: '0 1rem', // Optional: add minimal side padding so text doesn't touch screen edges
-  },
 };

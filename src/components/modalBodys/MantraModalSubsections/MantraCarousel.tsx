@@ -1,12 +1,12 @@
 import { Carousel } from '@mantine/carousel';
 import { Image } from '@mantine/core';
-import hsbcPhoto from '../../../assets/hsbc-rectangle.png';
-import hsbcBuilding from '../../../assets/hsbcBuilding.jpg';
-import hsbc2 from '../../../assets/hsbc2.png';
+import mantraPhoto from '../../../assets/mantra-rectangle.png';
+import mantra1 from '../../../assets/mantra1.png';
+import mantra2 from '../../../assets/mantra2.png';
 import '@mantine/carousel/styles.css';
 
-function HSBCImageCarousel() {
-  const images = [hsbcPhoto, hsbc2, hsbcBuilding];
+function MantraImageCarousel() {
+  const images = [mantra1, mantra2, mantraPhoto];
 
   return (
     <Carousel
@@ -30,4 +30,4 @@ function HSBCImageCarousel() {
   );
 }
 
-export default HSBCImageCarousel;
+export default MantraImageCarousel;

@@ -35,6 +35,7 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
           title: { fontWeight: 600 },
           body: {
             overflowY: 'auto',
+            padding: isMobile ? 0 : 'auto',
           },
         }}
       >
