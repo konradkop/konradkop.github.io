@@ -20,9 +20,7 @@ function MantraModal() {
       {isMobile && (
         <Flex direction={'column'} align="center" style={{ width: '100%' }}>
           <ModalImage img={mantraPhoto} />
-          <Flex>
-            <HeroSection />
-          </Flex>
+          <HeroSection />
         </Flex>
       )}
 

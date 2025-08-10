@@ -21,9 +21,7 @@ function KonradModal({ close }: KonradModalProps) {
     >
       {isMobile && (
         <Flex direction={'column'} align="center" style={{ width: '100%' }}>
-          <Flex>
-            <HeroSection close={close} />
-          </Flex>
+          <HeroSection close={close} />
         </Flex>
       )}
       {!isMobile && (
@@ -33,9 +31,7 @@ function KonradModal({ close }: KonradModalProps) {
           justify="center"
           style={{ width: '100%' }}
         >
-          <Flex>
-            <HeroSection close={close} />
-          </Flex>
+          <HeroSection close={close} />
         </Flex>
       )}
     </div>
