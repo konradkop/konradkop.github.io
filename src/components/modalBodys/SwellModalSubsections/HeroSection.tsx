@@ -37,11 +37,11 @@ function HeroSection() {
   };
 
   const items = [
-    'Managed food distribution and coordinated outreach efforts for traditionally underserved communities.',
-    'Conducted Excel-based data analysis, including generating heat maps, examining patient data, and collaborating directly with healthcare providers.',
-    'Worked within the American healthcare system, specifically with Medication-Assisted Treatment (MAT) programs for opioid addiction patients.',
-    'Developed educational materials and conducted community workshops to increase awareness of healthcare resources and services.',
-    'Assisted in the implementation of digital tools to streamline patient outreach and data tracking, improving efficiency in community health programs.',
+    'Contributed to an electron-based desktop application using Node and React/Redux, allowing users to send client-side requests using REST, GraphQL, WebSocket, and WebRTC for endpoint testing.',
+    'Created custom React hooks to improve site responsiveness and logic, and used Redux to consolidate state management, allowing for globally-scoped state access.',
+    'Created binary data testing for WebSocket protocol, enabling users to send blobs such as images, export logs, create Chai assertions with Mocha on their requests, and create a custom WebSocket development server for testing.',
+    'React/Redux, Mocha, and Chai tests were added primarily to give the client a more well-defined testing suite. Image limits are based on the client’s own server, which allows them to more accurately assess the user experience.',
+    'Added test code snippets to client-side requests, allowing clients to test their servers. Users can write their own tests within a NodeVM environment and/or use the predefined snippet. Assertion tests are written in Chai/Mocha.',
   ];
 
   return (
@@ -53,7 +53,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Title order={4} mb={5} style={description}>
-            Americorps | Volunteer | NYC
+            Swell | Open Source Developer
           </Title>
         </motion.div>
         <motion.div
@@ -62,7 +62,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Text size="sm" style={introText}>
-            May 2024 - Dec 2024
+            2021
           </Text>
         </motion.div>
         <motion.div

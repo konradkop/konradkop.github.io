@@ -1,85 +1,41 @@
-import {
-  Text,
-  Title,
-  List,
-  ThemeIcon,
-  Grid,
-  Flex,
-  Anchor,
-} from '@mantine/core';
-import netlifyPhoto from '../../assets/netlify-rectangle.png';
-import { motion } from 'motion/react';
+import { Flex } from '@mantine/core';
+import HeroSection from './DeliveryAppModalSubsections/HeroSection';
+import { useMediaQuery } from '@mantine/hooks';
+import { colors } from '../../styles';
 import ModalImage from './ModalImage';
+import deliveryAppPhoto from '../../assets/delivery-app.png';
 
 function DeliveryAppModal() {
-  const items = [
-    'Sample app I created',
-    'Writted in React, Typescript',
-    'Deployed on Netlify',
-  ];
-
+  const isMobile = useMediaQuery('(max-width: 50em)');
   return (
-    <>
-      <ModalImage img={netlifyPhoto} />
-      <div
-        style={{
-          padding: '20px',
-          background: 'white',
-          color: 'black',
-          borderRadius: '8px',
-        }}
-      >
-        <Grid>
-          <Flex direction={'column'} align="center" style={{ width: '100%' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <Title order={4} mb={5}>
-                Sample Delivery App |{' '}
-                <Anchor
-                  href="https://konrad-delivery-app.netlify.app/"
-                  target="_blank"
-                  size="lg"
-                  style={{
-                    fontWeight: 'bold',
-                  }}
-                >
-                  App Link
-                </Anchor>
-              </Title>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <Text size="sm" color="gray">
-                May 2024 - Dec 2024
-              </Text>
-            </motion.div>
+    <div
+      style={{
+        background: colors.lightRed,
+        color: 'black',
+        borderRadius: '8px',
+        height: '100%',
+      }}
+    >
+      {isMobile && (
+        <Flex direction={'column'} align="center" style={{ width: '100%' }}>
+          <ModalImage img={deliveryAppPhoto} />
+          <Flex>
+            <HeroSection />
           </Flex>
-          <List spacing="sm" size="md" mt={10}>
-            {items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <List.Item
-                  style={{ padding: 10 }}
-                  icon={<ThemeIcon color="blue" size={10} radius="xl" />}
-                >
-                  {item}
-                </List.Item>
-              </motion.div>
-            ))}
-          </List>
-        </Grid>
-      </div>
-    </>
+        </Flex>
+      )}
+
+      {!isMobile && (
+        <Flex direction={'row'} align="center" style={{ width: '100%' }}>
+          <Flex>
+            <HeroSection />
+          </Flex>
+          <Flex style={{ width: '50%', height: '100%' }}>
+            <ModalImage img={deliveryAppPhoto} />
+          </Flex>
+        </Flex>
+      )}
+    </div>
   );
 }
 

@@ -1,13 +1,21 @@
-import { Container, Title, Text, Box, Paper, ScrollArea } from '@mantine/core';
+import {
+  Container,
+  Title,
+  Text,
+  Box,
+  Paper,
+  ScrollArea,
+  Anchor,
+  Flex,
+} from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { motion } from 'motion/react';
-import { Flex } from '@mantine/core';
 import {
-  introText,
+  introTextRed,
   description,
   colors,
-  timelineDotBlue,
-  timelineHorizontalLineBlue,
+  timelineHorizontalLineRed,
+  timelineDotRed,
 } from '../../../styles';
 
 function HeroSection() {
@@ -37,11 +45,9 @@ function HeroSection() {
   };
 
   const items = [
-    'Managed food distribution and coordinated outreach efforts for traditionally underserved communities.',
-    'Conducted Excel-based data analysis, including generating heat maps, examining patient data, and collaborating directly with healthcare providers.',
-    'Worked within the American healthcare system, specifically with Medication-Assisted Treatment (MAT) programs for opioid addiction patients.',
-    'Developed educational materials and conducted community workshops to increase awareness of healthcare resources and services.',
-    'Assisted in the implementation of digital tools to streamline patient outreach and data tracking, improving efficiency in community health programs.',
+    'A sample app I created. Written in React, Typescript and deployed on Netlify',
+    'Integrated with Google Maps',
+    'Feel free to check it out!',
   ];
 
   return (
@@ -53,7 +59,17 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Title order={4} mb={5} style={description}>
-            Americorps | Volunteer | NYC
+            Sample Delivery App |{' '}
+            <Anchor
+              href="https://konrad-delivery-app.netlify.app/"
+              target="_blank"
+              size="lg"
+              style={{
+                fontWeight: 'bold',
+              }}
+            >
+              App Link
+            </Anchor>
           </Title>
         </motion.div>
         <motion.div
@@ -61,8 +77,8 @@ function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Text size="sm" style={introText}>
-            May 2024 - Dec 2024
+          <Text size="sm" style={introTextRed}>
+            2024
           </Text>
         </motion.div>
         <motion.div
@@ -79,7 +95,7 @@ function HeroSection() {
                 bottom: 0,
                 left: '0.65rem',
                 width: '2px',
-                backgroundColor: colors.accent,
+                backgroundColor: colors.accentRed,
                 zIndex: 0,
               }}
             />
@@ -90,8 +106,8 @@ function HeroSection() {
                     align="flex-start"
                     style={{ position: 'relative', zIndex: 1 }}
                   >
-                    <Box style={timelineHorizontalLineBlue} />
-                    <Box style={timelineDotBlue} />
+                    <Box style={timelineHorizontalLineRed} />
+                    <Box style={timelineDotRed} />
                     <Paper
                       withBorder
                       shadow="lg"

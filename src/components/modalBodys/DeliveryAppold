@@ -1,24 +1,26 @@
-import { Text, Title, List, ThemeIcon, Grid, Flex } from '@mantine/core';
-import mantraPhoto from '../../assets/mantra-rectangle.jpg';
+import {
+  Text,
+  Title,
+  List,
+  ThemeIcon,
+  Grid,
+  Flex,
+  Anchor,
+} from '@mantine/core';
+import netlifyPhoto from '../../assets/delivery-app.png';
 import { motion } from 'motion/react';
 import ModalImage from './ModalImage';
 
-function MantraModal() {
+function DeliveryAppModal() {
   const items = [
-    'Fullstack engineer at a health-tech startup connecting college students with mental health providers.',
-    'Developed a Node.js, TypeScript, and React-based application using GraphQL, AWS, and Postgres.',
-    'Joined as the 13th team member, growing to 50+ employees, mentoring 4 new hires.',
-    'Led projects involving significant business logic changes, third-party integrations, and payment logic.',
-    'Mantra now works with 110 campuses and supports 800,000+ students.',
-    '70% of patients reported Mantra helped them stay in school; 68% saw improved academic performance.',
-    'Contributed to React Native mobile app conversion, ensuring deep link integrity and UX stability.',
-    'Mitigated potential security/compliance issues related to HIPAA-sensitive customer data.',
-    'Maintained high-quality code using ESLint, Airbnb JavaScript Style, and Jest for testing.',
+    'Sample app I created',
+    'Writted in React, Typescript',
+    'Deployed on Netlify',
   ];
 
   return (
     <>
-      <ModalImage img={mantraPhoto} />
+      <ModalImage img={netlifyPhoto} />
       <div
         style={{
           padding: '20px',
@@ -35,7 +37,17 @@ function MantraModal() {
               transition={{ duration: 1 }}
             >
               <Title order={4} mb={5}>
-                Mantra Health | Software Engineer | NYC
+                Sample Delivery App |{' '}
+                <Anchor
+                  href="https://konrad-delivery-app.netlify.app/"
+                  target="_blank"
+                  size="lg"
+                  style={{
+                    fontWeight: 'bold',
+                  }}
+                >
+                  App Link
+                </Anchor>
               </Title>
             </motion.div>
             <motion.div
@@ -44,7 +56,7 @@ function MantraModal() {
               transition={{ duration: 1 }}
             >
               <Text size="sm" color="gray">
-                Nov 2021 - Jan 2024
+                May 2024 - Dec 2024
               </Text>
             </motion.div>
           </Flex>
@@ -71,4 +83,4 @@ function MantraModal() {
   );
 }
 
-export default MantraModal;
+export default DeliveryAppModal;

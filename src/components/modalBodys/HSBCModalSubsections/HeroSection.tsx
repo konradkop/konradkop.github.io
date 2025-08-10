@@ -1,4 +1,4 @@
-import { Container, Title, Text, Box, Paper } from '@mantine/core';
+import { Container, Title, Text, Box, Paper, ScrollArea } from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { motion } from 'motion/react';
 import { Flex } from '@mantine/core';
@@ -29,7 +29,7 @@ function HeroSection() {
   };
 
   const heroWrapper = {
-    minHeight: height - 300,
+    height: height - 300,
     display: 'flex',
     alignItems: isMobile ? 'left' : 'center',
     justifyContent: isMobile ? 'left' : 'center',
@@ -82,30 +82,32 @@ function HeroSection() {
                 zIndex: 0,
               }}
             />
-            {items.map((item, index) => (
-              <motion.div key={index} variants={childVariants}>
-                <Flex
-                  align="flex-start"
-                  style={{ position: 'relative', zIndex: 1 }}
-                >
-                  <Box style={timelineHorizontalLineRed} />
-                  <Box style={timelineDotRed} />
-                  <Paper
-                    withBorder
-                    shadow="lg"
-                    radius="md"
-                    p="md"
-                    mb="md"
-                    style={{
-                      backgroundColor: 'white',
-                      flex: 1,
-                    }}
+            <ScrollArea h={500} type="never">
+              {items.map((item, index) => (
+                <motion.div key={index} variants={childVariants}>
+                  <Flex
+                    align="flex-start"
+                    style={{ position: 'relative', zIndex: 1 }}
                   >
-                    <Text style={description}>{item}</Text>
-                  </Paper>
-                </Flex>
-              </motion.div>
-            ))}
+                    <Box style={timelineHorizontalLineRed} />
+                    <Box style={timelineDotRed} />
+                    <Paper
+                      withBorder
+                      shadow="lg"
+                      radius="md"
+                      p="md"
+                      mb="md"
+                      style={{
+                        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                        flex: 1,
+                      }}
+                    >
+                      <Text style={description}>{item}</Text>
+                    </Paper>
+                  </Flex>
+                </motion.div>
+              ))}
+            </ScrollArea>
           </Flex>
         </motion.div>
       </Container>

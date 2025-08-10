@@ -1,7 +1,5 @@
 import { Flex } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
-import konradSki from '../../assets/konrad-ski.jpg';
-import ModalImage from './ModalImage';
 import HeroSection from './KonradModalSubsections/HeroSection';
 import { colors } from '../../styles';
 
@@ -24,20 +22,19 @@ function KonradModal({ close }: KonradModalProps) {
       {isMobile && (
         <Flex direction={'column'} align="center" style={{ width: '100%' }}>
           <Flex>
-            <ModalImage img={konradSki} />
-          </Flex>
-          <Flex>
             <HeroSection close={close} />
           </Flex>
         </Flex>
       )}
       {!isMobile && (
-        <Flex direction={'row'} align="center" style={{ width: '100%' }}>
+        <Flex
+          direction={'row'}
+          align="center"
+          justify="center"
+          style={{ width: '100%' }}
+        >
           <Flex>
             <HeroSection close={close} />
-          </Flex>
-          <Flex>
-            <ModalImage img={konradSki} />
           </Flex>
         </Flex>
       )}

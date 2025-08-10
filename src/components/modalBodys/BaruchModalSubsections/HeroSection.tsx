@@ -3,11 +3,11 @@ import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { motion } from 'motion/react';
 import { Flex } from '@mantine/core';
 import {
-  introText,
   description,
   colors,
-  timelineDotBlue,
   timelineHorizontalLineBlue,
+  timelineDotBlue,
+  introText,
 } from '../../../styles';
 
 function HeroSection() {
@@ -37,11 +37,14 @@ function HeroSection() {
   };
 
   const items = [
-    'Managed food distribution and coordinated outreach efforts for traditionally underserved communities.',
-    'Conducted Excel-based data analysis, including generating heat maps, examining patient data, and collaborating directly with healthcare providers.',
-    'Worked within the American healthcare system, specifically with Medication-Assisted Treatment (MAT) programs for opioid addiction patients.',
-    'Developed educational materials and conducted community workshops to increase awareness of healthcare resources and services.',
-    'Assisted in the implementation of digital tools to streamline patient outreach and data tracking, improving efficiency in community health programs.',
+    'Strong foundation in statistical analysis, probability theory, and quantitative decision-making.',
+    'Proficiency in data-driven business modeling, forecasting, and optimization techniques.',
+    'Experience with statistical programming languages such as Python, R, and SQL for data analysis.',
+    'Application of machine learning algorithms to financial and business datasets for predictive insights.',
+    'Expertise in econometrics, regression analysis, and time-series forecasting for business strategy.',
+    'Hands-on experience with data visualization tools like Matplotlib.',
+    'Understanding of risk management, financial modeling, and quantitative trading strategies.',
+    'Capstone project focused on real-world data analytics challenges, collaborating with industry professionals.',
   ];
 
   return (
@@ -53,7 +56,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Title order={4} mb={5} style={description}>
-            Americorps | Volunteer | NYC
+            Baruch | BBA: Statistics and Quantitative Modeling | NYC
           </Title>
         </motion.div>
         <motion.div
@@ -62,7 +65,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Text size="sm" style={introText}>
-            May 2024 - Dec 2024
+            Sept 2015 - May 2019
           </Text>
         </motion.div>
         <motion.div
