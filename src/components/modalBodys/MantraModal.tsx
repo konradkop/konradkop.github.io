@@ -18,7 +18,7 @@ function MantraModal() {
       }}
     >
       {isMobile && (
-        <Flex direction={'column'} align="center" style={{ gap: 20 }}>
+        <Flex direction={'column'} align="center">
           <ModalImage img={mantraPhoto} />
           <HeroSection />
         </Flex>

@@ -29,7 +29,7 @@ function HeroSection() {
   };
 
   const heroWrapper = {
-    height: height - 300,
+    height: isMobile ? height : height - 300,
     display: 'flex',
     alignItems: isMobile ? 'left' : 'center',
     justifyContent: isMobile ? 'left' : 'center',

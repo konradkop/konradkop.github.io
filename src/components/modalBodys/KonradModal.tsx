@@ -20,7 +20,7 @@ function KonradModal({ close }: KonradModalProps) {
       }}
     >
       {isMobile && (
-        <Flex direction={'column'} align="center" style={{ gap: 20 }}>
+        <Flex direction={'column'} align="center">
           <HeroSection close={close} />
         </Flex>
       )}
