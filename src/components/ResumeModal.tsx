@@ -8,6 +8,7 @@ import BaruchModal from './modalBodys/BaruchModal';
 import SwellModal from './modalBodys/SwellModal';
 import KonradModal from './modalBodys/KonradModal';
 import DeliveryAppModal from './modalBodys/DeliveryAppModal';
+import AcxiomModal from './modalBodys/AcxiomModal';
 
 interface ResumeModalProps {
   opened: boolean;
@@ -47,6 +48,7 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
         {currLabel === 'Swell' && <SwellModal />}
         {currLabel === 'Konrad' && <KonradModal close={close} />}
         {currLabel === 'DeliveryApp' && <DeliveryAppModal />}
+        {currLabel === 'Acxiom' && <AcxiomModal />}
       </Modal>
     </>
   );

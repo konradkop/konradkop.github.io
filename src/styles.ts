@@ -9,6 +9,8 @@ export const colors = {
   footer: '#87CEEB',
   lightRed: '#f8d7da',
   accentRed: '#842029',
+  lightGrey: '#a0a0a0ff',
+  black: '#000000ff',
 };
 
 export const introText = {
@@ -21,6 +23,22 @@ export const introText = {
 
 export const introTextRed = {
   color: colors.accentRed,
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  fontFamily: 'monospace',
+  marginBottom: '1rem',
+};
+
+export const introTextGrey = {
+  color: colors.lightGrey,
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  fontFamily: 'monospace',
+  marginBottom: '1rem',
+};
+
+export const introTextWhite = {
+  color: colors.background,
   fontSize: '0.875rem',
   fontWeight: 500,
   fontFamily: 'monospace',
@@ -47,6 +65,16 @@ export const timelineHorizontalLineBlue: CSSProperties = {
   backgroundColor: colors.accent,
 };
 
+export const timelineHorizontalLineGrey: CSSProperties = {
+  position: 'absolute',
+  left: '0px',
+  top: '1rem',
+  width: '1.25rem',
+  height: '2px',
+  marginLeft: '0.7rem',
+  backgroundColor: colors.lightGrey,
+};
+
 export const timelineDotRed = {
   width: '12px',
   height: '12px',
@@ -63,6 +91,17 @@ export const timelineDotBlue = {
   height: '12px',
   borderRadius: '50%',
   backgroundColor: colors.accent,
+  marginLeft: '1.7rem',
+  marginRight: '1rem',
+  marginTop: '.7rem',
+  flexShrink: 0,
+};
+
+export const timelineDotGrey = {
+  width: '12px',
+  height: '12px',
+  borderRadius: '50%',
+  backgroundColor: colors.lightGrey,
   marginLeft: '1.7rem',
   marginRight: '1rem',
   marginTop: '.7rem',
@@ -93,6 +132,13 @@ export const subtitle = {
 
 export const description = {
   color: colors.descriptionText,
+  fontSize: '1rem',
+  lineHeight: 1.6,
+  maxWidth: 650,
+};
+
+export const descriptionWhite = {
+  color: colors.background,
   fontSize: '1rem',
   lineHeight: 1.6,
   maxWidth: 650,

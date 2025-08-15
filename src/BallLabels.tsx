@@ -6,6 +6,7 @@ import americorpsPhoto from './assets/americorps-circle.png';
 import baruchPhoto from './assets/baruchCollege-circle.png';
 import swellPhoto from './assets/swell-circle.png';
 import deliveryAppPhoto from './assets/delivery-app-circle-modified.png';
+import acxiomLogoPhoto from './assets/acxiom-logo-circle.png';
 
 const defaultImageSize = 870;
 const width = window.innerWidth * 0.99;
@@ -82,6 +83,13 @@ const labelsObj = {
     imageSize: defaultImageSize,
     image: deliveryAppPhoto,
     ballSize: ballSize * 0.75,
+  },
+  Acxiom: {
+    name: 'Acxiom',
+    color: '#4444ff',
+    imageSize: defaultImageSize,
+    image: acxiomLogoPhoto,
+    ballSize: ballSize,
   },
 };
 
