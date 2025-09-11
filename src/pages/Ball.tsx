@@ -65,7 +65,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
           labelObj.ballSize,
           {
             restitution: 0.8,
-            frictionAir: 0.001,
+            frictionAir: 1,
             render: {
               fillStyle: labelObj.color,
               sprite: {
