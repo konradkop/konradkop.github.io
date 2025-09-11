@@ -81,7 +81,7 @@ function HeroSection({ close }: HeroSectionProps) {
                 <br />
                 <br />
                 I&apos;m focusing my studies on Healthcare and Bioinformatics.
-                Currently, I am actively looking for an internship role as a{' '}
+                Currently, I am actively looking for an role as a{' '}
                 <Text span fw={700}>
                   ML Engineer/Software Engineer
                 </Text>

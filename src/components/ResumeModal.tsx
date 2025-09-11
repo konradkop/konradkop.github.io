@@ -9,6 +9,7 @@ import SwellModal from './modalBodys/SwellModal';
 import KonradModal from './modalBodys/KonradModal';
 import DeliveryAppModal from './modalBodys/DeliveryAppModal';
 import AcxiomModal from './modalBodys/AcxiomModal';
+import PAMLModal from './modalBodys/PAMLModal';
 
 interface ResumeModalProps {
   opened: boolean;
@@ -49,6 +50,7 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
         {currLabel === 'Konrad' && <KonradModal close={close} />}
         {currLabel === 'DeliveryApp' && <DeliveryAppModal />}
         {currLabel === 'Acxiom' && <AcxiomModal />}
+        {currLabel === 'PAML' && <PAMLModal />}
       </Modal>
     </>
   );

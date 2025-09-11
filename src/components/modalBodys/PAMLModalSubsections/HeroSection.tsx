@@ -1,4 +1,12 @@
-import { Container, Title, Text, Box, Paper, ScrollArea } from '@mantine/core';
+import {
+  Container,
+  Title,
+  Text,
+  Box,
+  Paper,
+  ScrollArea,
+  Anchor,
+} from '@mantine/core';
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { motion } from 'motion/react';
 import { Flex } from '@mantine/core';
@@ -37,12 +45,10 @@ function HeroSection() {
   };
 
   const items = [
-    'Strong foundation in statistical analysis, probability theory, and quantitative decision-making.',
-    'Proficiency in data-driven business modeling, forecasting, and optimization techniques.',
-    'Experience with statistical programming languages such as Python, R, and SQL for data analysis.',
-    'Expertise in econometrics, regression analysis, and time-series forecasting for business strategy.',
-    'Hands-on experience with data visualization tools like Matplotlib.',
-    'Understanding of risk management, financial modeling, and quantitative trading strategies.',
+    'Developed a machine learning–based mental health risk assessment tool using Logistic Regression, Linear Regression, and Support Vector Machines (SVM), achieving 82% test accuracy with Logistic Regression.',
+    'Conducted model comparison and hyperparameter tuning to optimize performance across multiple evaluation metrics (Accuracy, MAE, R²).',
+    'Designed and deployed a Streamlit web application that delivers real-time depression risk assessment and personalized lifestyle recommendations.',
+    'Collaborated with a 5-member interdisciplinary team to manage end-to-end project development, from data exploration and modeling to deployment and evaluation..',
   ];
 
   return (
@@ -54,7 +60,17 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Title order={4} mb={5} style={description}>
-            Baruch | BBA: Statistics and Quantitative Modeling | NYC
+            Mental Health Prediction Model | Developer |{' '}
+            <Anchor
+              href="https://paml-mental-health-project.streamlit.app"
+              target="_blank"
+              size="lg"
+              style={{
+                fontWeight: 'bold',
+              }}
+            >
+              Link
+            </Anchor>
           </Title>
         </motion.div>
         <motion.div
@@ -63,7 +79,7 @@ function HeroSection() {
           transition={{ duration: 1 }}
         >
           <Text size="sm" style={introText}>
-            Sept 2015 - May 2019
+            Feb 2025 - May 2025
           </Text>
         </motion.div>
         <motion.div

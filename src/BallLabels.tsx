@@ -7,6 +7,7 @@ import baruchPhoto from './assets/baruchCollege-circle.png';
 import swellPhoto from './assets/swell-circle.png';
 import deliveryAppPhoto from './assets/delivery-app-circle-modified.png';
 import acxiomLogoPhoto from './assets/acxiom-logo-circle.png';
+import PAMLcircle from './assets/PAML-circle.png';
 
 const defaultImageSize = 870;
 const width = window.innerWidth * 0.99;
@@ -90,6 +91,13 @@ const labelsObj = {
     imageSize: defaultImageSize,
     image: acxiomLogoPhoto,
     ballSize: ballSize,
+  },
+  PAML: {
+    name: 'PAML',
+    color: '#4444ff',
+    imageSize: defaultImageSize,
+    image: PAMLcircle,
+    ballSize: ballSize * 0.75,
   },
 };
 
