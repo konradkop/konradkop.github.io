@@ -39,7 +39,7 @@ function HeroSection() {
   const heroWrapper = {
     height: isMobile ? height : height - 300,
     display: 'flex',
-    alignItems: isMobile ? 'left' : 'center',
+    alignItems: 'left',
     justifyContent: isMobile ? 'left' : 'center',
     padding: isMobile ? '0' : '0rem 4rem',
   };
