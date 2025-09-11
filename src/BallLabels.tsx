@@ -40,7 +40,7 @@ const labelsObj = {
     color: '#ff4444',
     imageSize: defaultImageSize,
     image: cornellPhoto,
-    ballSize: ballSize * 1.25,
+    ballSize: ballSize * 1,
   },
 
   swell: {
@@ -48,7 +48,7 @@ const labelsObj = {
     color: '#4444ff',
     imageSize: defaultImageSize,
     image: swellPhoto,
-    ballSize: ballSize * 0.5,
+    ballSize: ballSize * 0.35,
   },
   hsbc: {
     name: 'HSBC',
@@ -76,14 +76,14 @@ const labelsObj = {
     color: '#4444ff',
     imageSize: defaultImageSize,
     image: baruchPhoto,
-    ballSize: ballSize * 0.5,
+    ballSize: ballSize * 0.25,
   },
   deliveryApp: {
     name: 'DeliveryApp',
     color: '#4444ff',
     imageSize: defaultImageSize,
     image: deliveryAppPhoto,
-    ballSize: ballSize * 0.75,
+    ballSize: ballSize * 0.35,
   },
   Acxiom: {
     name: 'Acxiom',
@@ -97,7 +97,7 @@ const labelsObj = {
     color: '#4444ff',
     imageSize: defaultImageSize,
     image: PAMLcircle,
-    ballSize: ballSize * 0.75,
+    ballSize: ballSize * 0.5,
   },
 };
 
