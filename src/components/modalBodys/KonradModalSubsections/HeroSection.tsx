@@ -36,9 +36,9 @@ function HeroSection({ close }: HeroSectionProps) {
   const heroWrapper = {
     height: isMobile ? height : height - 300,
     display: 'flex',
-    alignItems: 'left',
+    alignItems: isMobile ? 'left' : 'center',
     justifyContent: isMobile ? 'left' : 'center',
-    padding: isMobile ? '10' : '0rem 4rem',
+    padding: isMobile ? '0' : '0rem 4rem',
   };
 
   return (
@@ -81,7 +81,7 @@ function HeroSection({ close }: HeroSectionProps) {
                 <br />
                 <br />
                 I&apos;m focusing my studies on Healthcare and Bioinformatics.
-                Currently, I am actively looking for an role as a{' '}
+                Currently, I am actively looking for a role as a{' '}
                 <Text span fw={700}>
                   ML Engineer/Software Engineer
                 </Text>
