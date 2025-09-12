@@ -135,8 +135,9 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
     // Detect clicks on the balls
     Matter.Events.on(mouseConstraint, 'mouseup', (event) => {
       const mousePosition = event.mouse.position;
-      const clickedBall = balls.find((ball) =>
-        Matter.Bounds.contains(ball.body.bounds, mousePosition),
+      const clickedBall = balls.find(
+        (ball) => Matter.Vertices.contains(ball.body.vertices, mousePosition),
+        // Matter.Bounds.contains(ball.body.bounds, mousePosition),
       );
 
       if (clickedBall) {
@@ -264,6 +265,9 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       height = newHeight;
       walls = createWalls();
       Matter.World.add(world, walls);
+
+      const newMouse = Matter.Mouse.create(render.canvas);
+      mouseConstraint.mouse = newMouse;
     };
 
     window.addEventListener('resize', handleResize);
