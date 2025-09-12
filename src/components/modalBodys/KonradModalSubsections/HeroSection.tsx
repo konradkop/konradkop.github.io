@@ -10,20 +10,26 @@ import {
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { introText, mainTitle, subtitle, description } from '../../../styles';
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 interface HeroSectionProps {
   close: () => void;
 }
 
+interface DeviceOrientationEvent {
+  requestPermission?: () => Promise<'granted' | 'denied'>;
+}
+
 function HeroSection({ close }: HeroSectionProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
   const { height } = useViewportSize();
+  const [motionEnabled, setMotionEnabled] = useState(false);
 
   const containerVariants = {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.3, // adjust to control timing
+        staggerChildren: 0.3,
       },
     },
   };
@@ -39,6 +45,32 @@ function HeroSection({ close }: HeroSectionProps) {
     alignItems: isMobile ? 'left' : 'center',
     justifyContent: isMobile ? 'left' : 'center',
     padding: isMobile ? '0' : '0rem 4rem',
+  };
+
+  const requestMotionPermission = () => {
+    const devOrientationEvent =
+      DeviceOrientationEvent as DeviceOrientationEvent;
+
+    if (
+      devOrientationEvent.requestPermission &&
+      typeof devOrientationEvent.requestPermission === 'function'
+    ) {
+      devOrientationEvent
+        .requestPermission()
+        .then((response: string) => {
+          if (response === 'granted') {
+            setMotionEnabled(true);
+            alert('Motion access granted!');
+          } else {
+            alert('Permission denied for motion sensors.');
+          }
+        })
+        .catch(console.error);
+    } else {
+      // For Android or older browsers
+      setMotionEnabled(true);
+      alert('Motion access enabled!');
+    }
   };
 
   return (
@@ -87,7 +119,21 @@ function HeroSection({ close }: HeroSectionProps) {
                 </Text>
               </Text>
             </motion.div>
-            <br />
+
+            {isMobile && !motionEnabled && (
+              <motion.div variants={childVariants} style={{ marginTop: 20 }}>
+                <Button
+                  variant="outline"
+                  color="green"
+                  radius="md"
+                  size="md"
+                  onClick={requestMotionPermission}
+                >
+                  Enable Motion Sensors
+                </Button>
+              </motion.div>
+            )}
+
             <br />
             <motion.div variants={childVariants}>
               <Button
