@@ -5,9 +5,15 @@ import { colors } from '../../styles';
 
 interface KonradModalProps {
   close: () => void;
+  motionEnabled: boolean;
+  setMotionEnabled: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function KonradModal({ close }: KonradModalProps) {
+function KonradModal({
+  close,
+  motionEnabled,
+  setMotionEnabled,
+}: KonradModalProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
 
   return (
@@ -21,7 +27,11 @@ function KonradModal({ close }: KonradModalProps) {
     >
       {isMobile && (
         <Flex direction={'column'} align="center">
-          <HeroSection close={close} />
+          <HeroSection
+            close={close}
+            motionEnabled={motionEnabled}
+            setMotionEnabled={setMotionEnabled}
+          />
         </Flex>
       )}
       {!isMobile && (
@@ -31,7 +41,11 @@ function KonradModal({ close }: KonradModalProps) {
           justify="center"
           style={{ width: '100%' }}
         >
-          <HeroSection close={close} />
+          <HeroSection
+            close={close}
+            motionEnabled={motionEnabled}
+            setMotionEnabled={setMotionEnabled}
+          />
         </Flex>
       )}
     </div>

@@ -10,20 +10,24 @@ import {
 import { useMediaQuery, useViewportSize } from '@mantine/hooks';
 import { introText, mainTitle, subtitle, description } from '../../../styles';
 import { motion } from 'motion/react';
-import { useState } from 'react';
 
 interface HeroSectionProps {
   close: () => void;
+  motionEnabled: boolean;
+  setMotionEnabled: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 interface DeviceOrientationEvent {
   requestPermission?: () => Promise<'granted' | 'denied'>;
 }
 
-function HeroSection({ close }: HeroSectionProps) {
+function HeroSection({
+  close,
+  motionEnabled,
+  setMotionEnabled,
+}: HeroSectionProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
   const { height } = useViewportSize();
-  const [motionEnabled, setMotionEnabled] = useState(false);
 
   const containerVariants = {
     hidden: {},

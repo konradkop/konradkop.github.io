@@ -13,6 +13,7 @@ function App() {
   const [opened, { open, close }] = useDisclosure(true);
 
   const [currLabel, setCurrLabel] = useState<string>(labelsObj.konrad.name);
+  const [motionEnabled, setMotionEnabled] = useState(false);
 
   return (
     <MantineProvider>
@@ -21,6 +22,8 @@ function App() {
         open={open}
         close={close}
         currLabel={currLabel}
+        motionEnabled={motionEnabled}
+        setMotionEnabled={setMotionEnabled}
       />
       <Ball open={open} labelsObj={labelsObj} setCurrLabel={setCurrLabel} />
       <Footer />

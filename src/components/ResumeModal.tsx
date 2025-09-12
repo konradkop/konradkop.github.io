@@ -16,9 +16,17 @@ interface ResumeModalProps {
   open: () => void;
   close: () => void;
   currLabel: string;
+  motionEnabled: boolean;
+  setMotionEnabled: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
+function ResumeModal({
+  opened,
+  close,
+  currLabel,
+  motionEnabled,
+  setMotionEnabled,
+}: ResumeModalProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
   const width = window.innerWidth;
 
@@ -47,7 +55,13 @@ function ResumeModal({ opened, close, currLabel }: ResumeModalProps) {
         {currLabel === 'Cornell' && <CornellModal />}
         {currLabel === 'Baruch' && <BaruchModal />}
         {currLabel === 'Swell' && <SwellModal />}
-        {currLabel === 'Konrad' && <KonradModal close={close} />}
+        {currLabel === 'Konrad' && (
+          <KonradModal
+            close={close}
+            motionEnabled={motionEnabled}
+            setMotionEnabled={setMotionEnabled}
+          />
+        )}
         {currLabel === 'DeliveryApp' && <DeliveryAppModal />}
         {currLabel === 'Acxiom' && <AcxiomModal />}
         {currLabel === 'PAML' && <PAMLModal />}

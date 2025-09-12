@@ -27,7 +27,6 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
   const sceneRef = useRef<HTMLDivElement>(null);
   const [hoveredBall, setHoveredBall] = useState<string | null>(null);
-  // const [score, setScore] = useState(0);
 
   useEffect(() => {
     if (!sceneRef.current) return;
