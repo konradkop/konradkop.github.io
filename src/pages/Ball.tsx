@@ -59,6 +59,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
     });
 
     const handleOrientation = (event: DeviceOrientationEvent) => {
+      alert('device orientation event fired:');
       if (event.gamma != null && event.beta != null) {
         const gammaRad = (event.gamma * Math.PI) / 180; // convert to radians
         const betaRad = (event.beta * Math.PI) / 180;
