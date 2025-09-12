@@ -57,6 +57,22 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       },
     });
 
+    const handleOrientation = (event: DeviceOrientationEvent) => {
+      if (event.gamma != null && event.beta != null) {
+        // gamma is left-to-right tilt in degrees (-90 to 90)
+        // beta is front-to-back tilt in degrees (-180 to 180)
+        const tiltX = event.gamma / 45; // Normalize to about -2..2
+        const tiltY = event.beta / 45;
+
+        engine.gravity.x = Math.max(-1, Math.min(1, tiltX));
+        engine.gravity.y = Math.max(-1, Math.min(1, tiltY));
+      }
+    };
+
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', handleOrientation, true);
+    }
+
     const balls = Object.entries(labelsObj).map(([, labelObj], index) => {
       return {
         body: Matter.Bodies.circle(
@@ -104,41 +120,6 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
         render: { fillStyle: 'transparent' },
       }),
     ];
-
-    // const leftSquare = Matter.Bodies.trapezoid(
-    //   width / 2 - 150,
-    //   height * 0.36,
-    //   10,
-    //   200,
-    //   0.3,
-    //   {
-    //     isStatic: true,
-    //     angle: -Math.PI / 6,
-    //     render: { fillStyle: 'blue' },
-    //   },
-    // );
-
-    // const rightSquare = Matter.Bodies.trapezoid(
-    //   width / 2 + 150,
-    //   height * 0.36,
-    //   10,
-    //   200,
-    //   0.3,
-    //   {
-    //     isStatic: true,
-    //     angle: Math.PI / 6,
-    //     render: { fillStyle: 'blue' },
-    //   },
-    // );
-
-    // Matter.Events.on(engine, 'collisionStart', (event) => {
-    //   event.pairs.forEach(({ bodyA, bodyB }) => {
-    //     const ball = balls.find((b) => b.body === bodyA || b.body === bodyB);
-    //     if (ball && (bodyA === hoop || bodyB === hoop)) {
-    //       setScore((prev) => prev + 1);
-    //     }
-    //   });
-    // });
 
     // Add mouse control for dragging
     const mouse = Matter.Mouse.create(render.canvas);
@@ -291,6 +272,8 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       if (sceneRef.current) {
         sceneRef.current.innerHTML = '';
       }
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('deviceorientation', handleOrientation);
     };
   }, []);
 
