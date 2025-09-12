@@ -60,13 +60,11 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
     const handleOrientation = (event: DeviceOrientationEvent) => {
       if (event.gamma != null && event.beta != null) {
-        // gamma is left-to-right tilt in degrees (-90 to 90)
-        // beta is front-to-back tilt in degrees (-180 to 180)
-        const tiltX = event.gamma / 45; // Normalize to about -2..2
-        const tiltY = event.beta / 45;
+        const gammaRad = (event.gamma * Math.PI) / 180; // convert to radians
+        const betaRad = (event.beta * Math.PI) / 180;
 
-        engine.gravity.x = Math.max(-1, Math.min(1, tiltX));
-        engine.gravity.y = Math.max(-1, Math.min(1, tiltY));
+        engine.gravity.x = Math.sin(gammaRad); // -1 to 1
+        engine.gravity.y = Math.sin(betaRad); // -1 to 1
       }
     };
 
