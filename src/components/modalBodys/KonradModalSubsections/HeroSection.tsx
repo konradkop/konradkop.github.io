@@ -123,8 +123,8 @@ function HeroSection({ close }: HeroSectionProps) {
             {isMobile && !motionEnabled && (
               <motion.div variants={childVariants} style={{ marginTop: 20 }}>
                 <Button
-                  variant="outline"
-                  color="green"
+                  variant="light"
+                  color="blue"
                   radius="md"
                   size="md"
                   onClick={requestMotionPermission}
