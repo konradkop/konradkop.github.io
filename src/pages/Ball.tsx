@@ -40,6 +40,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
     let { width, height } = getDimensions();
     const initialWidth = width;
+    const initialHeight = height;
 
     const engine = Matter.Engine.create({
       gravity: { x: 0, y: 1, scale: 0.002 },
@@ -240,7 +241,10 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       render.options.height = newHeight;
       Matter.Render.setPixelRatio(render, window.devicePixelRatio);
 
-      const scaleFactor = newWidth / initialWidth;
+      const scaleFactorW = newWidth / initialWidth;
+      const scaleFactorH = newHeight / initialHeight;
+      const scaleFactor = Math.min(scaleFactorW, scaleFactorH);
+
       balls.forEach((ball) => {
         const newSize = ball.originalSize * scaleFactor;
         const currentSize = ball.body.circleRadius || ball.originalSize;
