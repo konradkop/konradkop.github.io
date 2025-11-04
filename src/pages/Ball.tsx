@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
-import pixelBackground from '../assets/pixelBackground.gif';
 
 interface LabelItem {
   name: string;
@@ -297,7 +296,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       <div
         ref={sceneRef}
         style={{
-          backgroundImage: `url(${pixelBackground})`,
+          backgroundImage: `url(https://storage.googleapis.com/konradkop/pixelBackground.gif)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
