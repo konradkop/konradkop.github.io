@@ -65,7 +65,7 @@ function HeroSection() {
                 and provide updated and enriched financial information.
               </Text>
             </motion.div>
-            <TechStackSection />
+            <TechStackSection company={'HSBC'} />
           </motion.div>
         </Center>
       </Container>

@@ -68,7 +68,7 @@ function HeroSection() {
                 800,000+ students.
               </Text>
             </motion.div>
-            <TechStackSection />
+            <TechStackSection company={'Mantra'} />
           </motion.div>
         </Center>
       </Container>

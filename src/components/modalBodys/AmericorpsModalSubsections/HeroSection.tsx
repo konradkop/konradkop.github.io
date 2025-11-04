@@ -64,7 +64,7 @@ function HeroSection() {
                 addiction patients.
               </Text>
             </motion.div>
-            <TechStackSection />
+            <TechStackSection company={'Americorps'} />
           </motion.div>
         </Center>
       </Container>

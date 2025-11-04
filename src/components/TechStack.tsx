@@ -2,24 +2,31 @@ import { Group, Badge, Box } from '@mantine/core';
 import { motion } from 'motion/react';
 import { colors } from '../styles';
 
-function TechStackSection() {
-  const techStack = [
-    'TypeScript',
-    'React',
-    'Node.js',
-    'Snowflake',
-    'SQL',
-    'Python',
-    'ICD-10',
-    'Healthcare Analytics',
-  ];
+interface TechStackSectionProps {
+  company: 'Mantra' | 'Axciom' | 'HSBC' | 'Americorps';
+}
+
+function TechStackSection({ company }: TechStackSectionProps) {
+  const techStacks = {
+    Mantra: [
+      'TypeScript',
+      'React',
+      'Node.js',
+      'SQL',
+      'ICD-10',
+      'Healthcare Analytics',
+    ],
+    Axciom: ['SQL', 'Python', 'ICD-10', 'Healthcare Analytics'],
+    HSBC: ['SQL', 'GCP', 'Financial Analytics', 'Data Warehousing'],
+    Americorps: ['SQL', 'Excel', 'ICD-10', 'Healthcare Analytics'],
+  } as const;
+
+  const techStack = techStacks[company];
 
   const containerVariants = {
     hidden: {},
     show: {
-      transition: {
-        staggerChildren: 0.15,
-      },
+      transition: { staggerChildren: 0.15 },
     },
   };
 

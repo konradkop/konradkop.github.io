@@ -64,7 +64,7 @@ function HeroSection() {
                 process, segment, and validate millions of healthcare records
               </Text>
             </motion.div>
-            <TechStackSection />
+            <TechStackSection company={'Axciom'} />
           </motion.div>
         </Center>
       </Container>
