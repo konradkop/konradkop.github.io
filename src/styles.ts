@@ -6,11 +6,13 @@ export const colors = {
   secondaryText: '#7a7a7a',
   descriptionText: '#555',
   accent: 'blue',
-  footer: '#87CEEB',
+  footer: '#130e3bff',
   lightRed: '#f8d7da',
   accentRed: '#842029',
   lightGrey: '#a0a0a0ff',
   black: '#000000ff',
+  purple: '#3d0055ff',
+  boxbackground: 'rgba(61, 61, 61, 0.5)',
 };
 
 export const introText = {

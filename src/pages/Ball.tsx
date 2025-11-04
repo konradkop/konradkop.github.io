@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
-import { useMediaQuery } from '@mantine/hooks';
+import pixelBackground from '../assets/pixelBackground.gif';
 
 interface LabelItem {
   name: string;
@@ -23,8 +23,6 @@ interface BallProps {
 const scaleNumber = 1.2;
 
 const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
-  const isMobile = useMediaQuery('(max-width: 50em)');
-
   const sceneRef = useRef<HTMLDivElement>(null);
   const [hoveredBall, setHoveredBall] = useState<string | null>(null);
 
@@ -34,7 +32,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
     const getDimensions = () => ({
       width: window.innerWidth * 0.99,
-      height: window.innerHeight - 185,
+      height: window.innerHeight - 80,
     });
 
     let { width, height } = getDimensions();
@@ -42,7 +40,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
     const initialHeight = height;
 
     const engine = Matter.Engine.create({
-      gravity: { x: 0, y: 1, scale: 0.002 },
+      gravity: { x: 0, y: 0.0, scale: 0.002 },
     });
     const world = engine.world;
 
@@ -71,25 +69,24 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       window.addEventListener('deviceorientation', handleOrientation, true);
     }
 
-    const balls = Object.entries(labelsObj).map(([, labelObj], index) => {
+    const balls = Object.entries(labelsObj).map(([, labelObj]) => {
+      const randomX = Math.random() * width * 0.9 + width * 0.05;
+      const randomY = Math.random() * height * 0.9 + height * 0.05;
+
       return {
-        body: Matter.Bodies.circle(
-          100 + index * (width / Object.keys(labelsObj).length),
-          100 + (isMobile ? index : 1) * 30,
-          labelObj.ballSize,
-          {
-            restitution: 0.8,
-            frictionAir: 0.001,
-            render: {
-              fillStyle: labelObj.color,
-              sprite: {
-                texture: labelObj.image,
-                xScale: (labelObj.ballSize * 2) / labelObj.imageSize,
-                yScale: (labelObj.ballSize * 2) / labelObj.imageSize,
-              },
+        body: Matter.Bodies.circle(randomX, randomY, labelObj.ballSize, {
+          restitution: 0.8,
+          frictionAir: 0.001,
+          render: {
+            opacity: 0.8,
+            fillStyle: labelObj.color,
+            sprite: {
+              texture: labelObj.image,
+              xScale: (labelObj.ballSize * 2) / labelObj.imageSize,
+              yScale: (labelObj.ballSize * 2) / labelObj.imageSize,
             },
           },
-        ),
+        }),
         label: labelObj.name,
         scaledUp: false,
         originalSize: labelObj.ballSize,
@@ -228,6 +225,18 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
     Matter.Runner.run(runner, engine);
     Matter.Render.run(render);
 
+    // Add slight random movement to each ball
+    const randomMotionInterval = setInterval(() => {
+      balls.forEach((ball) => {
+        const randomX = (Math.random() - 0.5) * 0.01;
+        const randomY = (Math.random() - 0.5) * 0.01;
+        Matter.Body.applyForce(ball.body, ball.body.position, {
+          x: randomX,
+          y: randomY,
+        });
+      });
+    }, 200);
+
     // Handle window resize
     const handleResize = () => {
       const { width: newWidth, height: newHeight } = getDimensions();
@@ -273,6 +282,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       Matter.Render.stop(render);
       Matter.Runner.stop(runner);
       Matter.World.clear(world, false);
+      clearInterval(randomMotionInterval);
       Matter.Engine.clear(engine);
       if (sceneRef.current) {
         sceneRef.current.innerHTML = '';
@@ -284,7 +294,15 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
 
   return (
     <>
-      <div ref={sceneRef} />
+      <div
+        ref={sceneRef}
+        style={{
+          backgroundImage: `url(${pixelBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
     </>
   );
 };

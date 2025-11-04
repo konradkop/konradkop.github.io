@@ -3,7 +3,7 @@ import '@mantine/carousel/styles.css';
 import './App.css';
 import { MantineProvider } from '@mantine/core';
 import Ball from './pages/Ball';
-import ResumeModal from './components/ResumeModal';
+import ResumeModal from './components/ResumeDrawer';
 import { useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
 import labelsObj from './BallLabels';

@@ -5,11 +5,12 @@ import konradPhoto from '../assets/konradPhoto.jpg'; // Import the image
 import feather from 'feather-icons';
 import konradResume from '../assets/Konrad-resume.pdf';
 import { colors } from '../styles';
+import { useMediaQuery } from '@mantine/hooks';
 function Footer() {
   useEffect(() => {
     feather.replace();
   }, []);
-
+  const isMobile = useMediaQuery('(max-width: 50em)');
   return (
     <Box
       style={{
@@ -18,8 +19,9 @@ function Footer() {
         bottom: 0,
         left: 0,
         width: '100%',
-        height: 200,
+        height: 100,
         backgroundColor: colors.footer,
+        zIndex: isMobile ? 0 : 1000,
       }}
     >
       <Flex justify="space-around" align="center" gap="xl">
@@ -38,9 +40,9 @@ function Footer() {
         <Group>
           <Anchor
             href={konradResume}
-            size="md"
+            size="xl"
             variant="gradient"
-            gradient={{ from: 'white', to: 'white' }}
+            gradient={{ from: 'white', to: 'purple' }}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -52,9 +54,9 @@ function Footer() {
           </Anchor>
           <Anchor
             href="https://github.com/konradkop"
-            size="md"
+            size="xl"
             variant="gradient"
-            gradient={{ from: 'white', to: 'white' }}
+            gradient={{ from: 'white', to: 'grey' }}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -66,9 +68,9 @@ function Footer() {
           </Anchor>
           <Anchor
             href="https://www.linkedin.com/in/konradkopko/"
-            size="md"
+            size="xl"
             variant="gradient"
-            gradient={{ from: 'white', to: 'white' }}
+            gradient={{ from: 'white', to: 'blue' }}
             target="_blank"
             rel="noopener noreferrer"
           >

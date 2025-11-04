@@ -1,5 +1,4 @@
 import { useMediaQuery } from '@mantine/hooks';
-import { Modal } from '@mantine/core';
 import MantraModal from './modalBodys/MantraModal';
 import HSBCModal from './modalBodys/HSBCModal';
 import AmericorpsModal from './modalBodys/AmericorpsModal';
@@ -10,8 +9,11 @@ import KonradModal from './modalBodys/KonradModal';
 import DeliveryAppModal from './modalBodys/DeliveryAppModal';
 import AcxiomModal from './modalBodys/AcxiomModal';
 import PAMLModal from './modalBodys/PAMLModal';
+import { Drawer } from '@mantine/core';
+import { colors } from '../styles';
+import circuitBoard from '../assets/circuitboard.gif';
 
-interface ResumeModalProps {
+interface ResumeDrawerProps {
   opened: boolean;
   open: () => void;
   close: () => void;
@@ -20,32 +22,32 @@ interface ResumeModalProps {
   setMotionEnabled: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function ResumeModal({
+function ResumeDrawer({
   opened,
   close,
   currLabel,
   motionEnabled,
   setMotionEnabled,
-}: ResumeModalProps) {
+}: ResumeDrawerProps) {
   const isMobile = useMediaQuery('(max-width: 50em)');
-  const width = window.innerWidth;
 
   return (
     <>
-      <Modal
+      <Drawer
         opened={opened}
         onClose={close}
+        position="left"
         padding={isMobile ? 10 : 50}
-        withCloseButton={isMobile ? true : false}
-        fullScreen={isMobile}
-        transitionProps={{ transition: 'slide-down', duration: 400 }}
-        overlayProps={{ backgroundOpacity: 0.3, blur: 0 }}
-        size={width}
+        size={isMobile ? '100%' : '50%'}
+        overlayProps={{ blur: 0, opacity: 0.3 }}
+        withCloseButton={isMobile}
         styles={{
-          title: { fontWeight: 600 },
-          body: {
-            overflowY: 'auto',
-            padding: isMobile ? 0 : 'auto',
+          content: {
+            backgroundImage: `url(${circuitBoard})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right',
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: colors.black,
           },
         }}
       >
@@ -65,9 +67,9 @@ function ResumeModal({
         {currLabel === 'DeliveryApp' && <DeliveryAppModal />}
         {currLabel === 'Acxiom' && <AcxiomModal />}
         {currLabel === 'PAML' && <PAMLModal />}
-      </Modal>
+      </Drawer>
     </>
   );
 }
 
-export default ResumeModal;
+export default ResumeDrawer;

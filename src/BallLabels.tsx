@@ -12,7 +12,7 @@ import PAMLcircle from './assets/PAML-circle.png';
 const defaultImageSize = 870;
 const width = window.innerWidth * 0.99;
 const height = window.innerHeight * 0.8;
-let ballSize = Math.min(width, height) * 0.2;
+let ballSize = Math.min(width, height) * 0.15;
 
 let isMobile = false;
 
