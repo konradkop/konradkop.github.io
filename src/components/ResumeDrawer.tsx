@@ -48,6 +48,8 @@ function ResumeDrawer({
             backgroundPosition: 'right',
             backgroundRepeat: 'no-repeat',
             backgroundColor: colors.black,
+            borderRight: '1px solid purple',
+            boxShadow: '0 0 30px rgba(253, 0, 219, 0.6)',
           },
         }}
       >

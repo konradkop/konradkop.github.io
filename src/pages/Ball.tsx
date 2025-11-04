@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Matter from 'matter-js';
+import { colors } from '../styles';
 
 interface LabelItem {
   name: string;
@@ -292,17 +293,44 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
   }, []);
 
   return (
-    <>
+    <div
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+        backgroundColor: colors.black,
+      }}
+    >
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+        }}
+        src="https://storage.googleapis.com/konradkop/purple-infinity-galaxy-moewalls-com.mp4"
+      />
+
       <div
         ref={sceneRef}
         style={{
-          backgroundImage: `url(https://storage.googleapis.com/konradkop/pixelBackground.gif)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
         }}
       />
-    </>
+    </div>
   );
 };
 
