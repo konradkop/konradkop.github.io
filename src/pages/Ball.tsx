@@ -24,7 +24,96 @@ const scaleNumber = 1.2;
 
 const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
   const sceneRef = useRef<HTMLDivElement>(null);
+  const laserCanvasRef = useRef<HTMLCanvasElement>(null);
   const [hoveredBall, setHoveredBall] = useState<string | null>(null);
+
+  useEffect(() => {
+    const canvas = laserCanvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    const lasers = Array.from({ length: 8 }).map(() => {
+      const angle = Math.random() * Math.PI * 2;
+      const length = 200 + Math.random() * 300;
+      const speed = 2 + Math.random() * 3;
+      const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+      // Calculate offscreen starting position based on angle
+      let x = 0;
+      let y = 0;
+
+      // Choose a side to start from
+      const side = Math.floor(Math.random() * 4); // 0=top,1=right,2=bottom,3=left
+
+      switch (side) {
+        case 0: // top
+          x = Math.random() * canvas.width;
+          y = -length;
+          break;
+        case 1: // right
+          x = canvas.width + length;
+          y = Math.random() * canvas.height;
+          break;
+        case 2: // bottom
+          x = Math.random() * canvas.width;
+          y = canvas.height + length;
+          break;
+        case 3: // left
+          x = -length;
+          y = Math.random() * canvas.height;
+          break;
+      }
+
+      return { x, y, length, speed, angle, color };
+    });
+
+    const animate = () => {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      lasers.forEach((laser) => {
+        ctx.strokeStyle = laser.color;
+        ctx.lineWidth = 2;
+        ctx.shadowColor = laser.color;
+        ctx.shadowBlur = 10;
+
+        ctx.beginPath();
+        ctx.moveTo(laser.x, laser.y);
+        ctx.lineTo(
+          laser.x + Math.cos(laser.angle) * laser.length,
+          laser.y + Math.sin(laser.angle) * laser.length,
+        );
+        ctx.stroke();
+
+        // Move laser
+        laser.x += Math.cos(laser.angle) * laser.speed;
+        laser.y += Math.sin(laser.angle) * laser.speed;
+
+        // Wrap around screen
+        if (laser.x < 0) laser.x = canvas.width;
+        if (laser.x > canvas.width) laser.x = 0;
+        if (laser.y < 0) laser.y = canvas.height;
+        if (laser.y > canvas.height) laser.y = 0;
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
 
   useEffect(() => {
     if (!sceneRef.current) return;
@@ -318,6 +407,19 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
           zIndex: 0,
         }}
         src="https://storage.googleapis.com/konradkop/purple-infinity-galaxy-moewalls-com.mp4"
+      />
+
+      <canvas
+        ref={laserCanvasRef}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0.5,
+          pointerEvents: 'none',
+        }}
       />
 
       <div
