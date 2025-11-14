@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { colors } from '../styles';
 
 interface TechStackSectionProps {
-  company: 'Mantra' | 'Axciom' | 'HSBC' | 'Americorps';
+  company: 'Mantra' | 'Acxiom' | 'HSBC' | 'Americorps';
 }
 
 function TechStackSection({ company }: TechStackSectionProps) {
@@ -16,7 +16,7 @@ function TechStackSection({ company }: TechStackSectionProps) {
       'ICD-10',
       'Healthcare Analytics',
     ],
-    Axciom: ['SQL', 'Python', 'ICD-10', 'Healthcare Analytics'],
+    Acxiom: ['SQL', 'Python', 'ICD-10', 'Healthcare Analytics'],
     HSBC: ['SQL', 'GCP', 'Financial Analytics', 'Data Warehousing'],
     Americorps: ['SQL', 'Excel', 'ICD-10', 'Healthcare Analytics'],
   } as const;

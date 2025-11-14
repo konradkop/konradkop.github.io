@@ -90,6 +90,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
         label: labelObj.name,
         scaledUp: false,
         originalSize: labelObj.ballSize,
+        lastHit: 0,
       };
     });
 

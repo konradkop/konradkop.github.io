@@ -44,7 +44,7 @@ function HeroSection() {
             </motion.div>
 
             <motion.div variants={childVariants}>
-              <Title style={mainTitle}>Axciom</Title>
+              <Title style={mainTitle}>Acxiom</Title>
             </motion.div>
 
             <motion.div variants={childVariants}>
@@ -64,7 +64,7 @@ function HeroSection() {
                 process, segment, and validate millions of healthcare records
               </Text>
             </motion.div>
-            <TechStackSection company={'Axciom'} />
+            <TechStackSection company={'Acxiom'} />
           </motion.div>
         </Center>
       </Container>

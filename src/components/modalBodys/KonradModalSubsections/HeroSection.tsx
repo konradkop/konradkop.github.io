@@ -96,7 +96,7 @@ function HeroSection({
 
             <motion.div variants={childVariants}>
               <Title order={2} style={subtitle}>
-                Thanks for clicking on my website!
+                Thanks for clicking on my fun website!
               </Title>
             </motion.div>
 
