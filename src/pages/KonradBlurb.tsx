@@ -11,6 +11,12 @@ const styles: Record<string, React.CSSProperties> = {
   textStyle: {
     textAlign: 'left',
   },
+  canvasWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '20px',
+  },
+  canvas: { borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' },
 };
 
 interface KonradBlurb {
