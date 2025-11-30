@@ -45,7 +45,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
       const angle = Math.random() * Math.PI * 2;
       const length = 200 + Math.random() * 300;
       const speed = 2 + Math.random() * 3;
-      const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      const color = `hsl(${Math.random() * 360}, 100%, 70%)`;
 
       // Calculate offscreen starting position based on angle
       let x = 0;
@@ -84,7 +84,7 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
         ctx.strokeStyle = laser.color;
         ctx.lineWidth = 2;
         ctx.shadowColor = laser.color;
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 15;
 
         ctx.beginPath();
         ctx.moveTo(laser.x, laser.y);
@@ -92,8 +92,10 @@ const Ball: React.FC<BallProps> = ({ open, labelsObj, setCurrLabel }) => {
           laser.x + Math.cos(laser.angle) * laser.length,
           laser.y + Math.sin(laser.angle) * laser.length,
         );
+        // Addign strokes gives it that glow blur effect
         ctx.stroke();
-
+        ctx.stroke();
+        ctx.stroke();
         // Move laser
         laser.x += Math.cos(laser.angle) * laser.speed;
         laser.y += Math.sin(laser.angle) * laser.speed;
