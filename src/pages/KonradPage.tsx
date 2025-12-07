@@ -88,6 +88,10 @@ export default function KonradPage({ setFun }: KonradPageProps) {
             <Anchor onClick={() => setShowProjects(true)} mx={4}>
               projects
             </Anchor>
+            ] [
+            <Anchor href="https://53d8b2b1.fishattack.pages.dev" mx={4}>
+              🐟
+            </Anchor>
             ]
           </Text>
         </div>
