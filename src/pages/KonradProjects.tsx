@@ -13,7 +13,7 @@ import {
 interface Project {
   id: number;
   title: string;
-  job: string; // new field
+  job: string; 
   description: string[];
   technologies: string[];
   link?: string;
@@ -171,7 +171,10 @@ const KonradProjects: React.FC = () => {
             radius="md"
             padding="md"
             withBorder
-            style={{ width: '90%' }}
+            style={{ width: '90%',
+              borderLeft: '4px solid lightblue'
+              
+             }}
           >
             <Stack gap="xs">
               <Text fw={600} size="lg">

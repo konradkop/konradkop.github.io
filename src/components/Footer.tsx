@@ -1,7 +1,7 @@
 import { Box, Text, Group, Anchor, Flex, Space } from '@mantine/core';
 import { useEffect } from 'react';
 import ImageComponent from './ImageComponent';
-import konradPhoto from '../assets/konradPhoto.jpg'; // Import the image
+import konradPhoto from '../assets/konradPhoto.jpg'; 
 import feather from 'feather-icons';
 import konradResume from '../assets/Konrad-resume.pdf';
 import { colors } from '../styles';

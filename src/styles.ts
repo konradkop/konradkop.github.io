@@ -13,6 +13,9 @@ export const colors = {
   black: '#000000ff',
   purple: '#3d0055ff',
   boxbackground: 'rgba(61, 61, 61, 0.5)',
+  rustColor: '#D14900',
+  jsYellow: '#F7DF1E',
+  jsBlack :'#000000',
 };
 
 export const introText = {

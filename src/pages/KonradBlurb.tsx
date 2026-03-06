@@ -46,10 +46,7 @@ export const KonradProjects: React.FC<KonradBlurb> = ({
             <Space h="md" />
 
             <Text style={styles.textStyle}>
-              You&apos;ll most likely find me building apps in TypeScript,
-              experimenting with Azure, deploying on the App Store, or wiring
-              together another side project that probably involves React,
-              Pytorch and Node.
+              Currenly getting some Azure certifications, learning Rust, and completing my MS at Cornell
             </Text>
 
             <Space h="md" />

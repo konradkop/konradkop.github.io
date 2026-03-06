@@ -8,10 +8,10 @@ function ImageComponent({ photo }: ImageComponentProps) {
   return (
     <Box style={{ maxWidth: '100px' }}>
       <Image
-        src={photo} // Use the imported image
+        src={photo} 
         alt="Konrad's photo"
-        radius="md" // Optional: Adds rounded corners
-        fit="contain" // Optional: Controls how the image fits within the container
+        radius="md" 
+        fit="contain" 
         style={{ width: '50px', height: '48px' }}
       />
     </Box>
