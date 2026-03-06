@@ -68,7 +68,7 @@ const crabImages = {
 
             backgroundImage: `url(${crabImages[post.crabType]})`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: '120px',
+            backgroundSize: 'clamp(60px, 15%, 150px)',
             backgroundPosition: 'right 15px bottom 15px',
         }}
         >
